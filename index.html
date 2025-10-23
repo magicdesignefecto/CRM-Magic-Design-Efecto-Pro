@@ -11,228 +11,181 @@
        * (Incluye variables :root, modo claro/oscuro, layout, componentes y estilos de login)
        */
        
+      :root {
+       /* Primitive Color Tokens */
+       --color-white: rgba(255, 255, 255, 1);
+       --color-black: rgba(0, 0, 0, 1);
+       --color-cream-50: rgba(252, 252, 249, 1);
+       --color-cream-100: rgba(255, 255, 253, 1);
+       --color-gray-200: rgba(245, 245, 245, 1);
+       --color-gray-300: rgba(167, 169, 169, 1);
+       --color-gray-400: rgba(119, 124, 124, 1);
+       --color-slate-500: rgba(98, 108, 113, 1);
+       --color-brown-600: rgba(94, 82, 64, 1);
+       --color-charcoal-700: rgba(31, 33, 33, 1);
+       --color-charcoal-800: rgba(38, 40, 40, 1);
+       --color-slate-900: rgba(19, 52, 59, 1);
+       --color-teal-300: rgba(50, 184, 198, 1);
+       --color-teal-400: rgba(45, 166, 178, 1);
+       --color-teal-500: rgba(29, 111, 182, 1);
+       --color-teal-600: rgba(26, 98, 161, 1);
+       --color-teal-700: rgba(23, 86, 140, 1);
+       --color-teal-800: rgba(41, 150, 161, 1);
+       --color-red-400: rgba(255, 84, 89, 1);
+       --color-red-500: rgba(192, 21, 47, 1);
+       --color-orange-400: rgba(230, 129, 97, 1);
+       --color-orange-500: rgba(168, 75, 47, 1);
+       --color-blue-400: rgba(59, 130, 246, 1);
+       --color-blue-500: rgba(37, 99, 235, 1);
+       --color-blue-600: rgba(29, 78, 216, 1);
+       --color-green-500: rgba(34, 197, 94, 1);
+       --color-green-400: rgba(52, 211, 153, 1);
+
+       /* RGB versions */
+       --color-brown-600-rgb: 94, 82, 64;
+       --color-teal-500-rgb: 29, 111, 182;
+       --color-slate-900-rgb: 19, 52, 59;
+       --color-slate-500-rgb: 98, 108, 113;
+       --color-red-500-rgb: 192, 21, 47;
+       --color-red-400-rgb: 255, 84, 89;
+       --color-orange-500-rgb: 168, 75, 47;
+       --color-orange-400-rgb: 230, 129, 97;
+       --color-blue-400-rgb: 59, 130, 246;
+       --color-green-500-rgb: 34, 197, 94;
+       --color-green-400-rgb: 52, 211, 153;
+
+       /* Background color tokens (Light Mode) */
+       --color-bg-1: rgba(59, 130, 246, 0.08); 
+       --color-bg-2: rgba(245, 158, 11, 0.08); 
+       --color-bg-3: rgba(34, 197, 94, 0.08);
+       --color-bg-4: rgba(239, 68, 68, 0.08);
+       --color-bg-5: rgba(147, 51, 234, 0.08);
+       --color-bg-6: rgba(249, 115, 22, 0.08);
+       --color-bg-7: rgba(236, 72, 153, 0.08);
+       --color-bg-8: rgba(6, 182, 212, 0.08); 
+
+       /* Semantic Color Tokens (Light Mode) */
+       --color-background: var(--color-cream-50);
+       --color-surface: var(--color-cream-100);
+       --color-text: var(--color-slate-900);
+       --color-text-secondary: var(--color-slate-500);
+       --color-primary: var(--color-teal-500);
+       --color-primary-hover: var(--color-teal-600);
+       --color-primary-active: var(--color-teal-700);
+       --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+       --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+       --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+       --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+       --color-btn-primary-text: var(--color-cream-50);
+       --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+       --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+       --color-error: var(--color-red-500);
+       --color-success: var(--color-green-500);
+       --color-warning: var(--color-orange-500);
+       --color-info: var(--color-slate-500);
+       --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+       --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+       --color-success-rgb: var(--color-green-500-rgb);
+
+       /* Common style patterns */
+       --focus-ring: 0 0 0 3px var(--color-focus-ring);
+       --focus-outline: 2px solid var(--color-primary);
+       --status-bg-opacity: 0.15;
+       --status-border-opacity: 0.25;
+       --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+       --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+       /* RGB versions for opacity control */
+       --color-error-rgb: 192, 21, 47;
+       --color-warning-rgb: 168, 75, 47;
+       --color-info-rgb: 98, 108, 113;
+
+       /* Typography */
+       --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
+         BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
+         Monaco, Consolas, monospace;
+       --font-size-xs: 11px;
+       --font-size-sm: 12px;
+       --font-size-base: 14px;
+       --font-size-md: 14px;
+       --font-size-lg: 16px;
+       --font-size-xl: 18px;
+       --font-size-2xl: 20px;
+       --font-size-3xl: 24px;
+       --font-size-4xl: 30px;
+       --font-weight-normal: 400;
+       --font-weight-medium: 500;
+       --font-weight-semibold: 550;
+       --font-weight-bold: 600;
+       --line-height-tight: 1.2;
+       --line-height-normal: 1.5;
+       --letter-spacing-tight: -0.01em;
+
+       /* Spacing */
+       --space-0: 0;
+       --space-1: 1px;
+       --space-2: 2px;
+       --space-4: 4px;
+       --space-6: 6px;
+       --space-8: 8px;
+       --space-10: 10px;
+       --space-12: 12px;
+       --space-16: 16px;
+       --space-20: 20px;
+       --space-24: 24px;
+       --space-32: 32px;
+
+       /* Border Radius */
+       --radius-sm: 6px;
+       --radius-base: 8px;
+       --radius-md: 10px;
+       --radius-lg: 12px;
+       --radius-full: 9999px;
+
+       /* Shadows */
+       --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+       --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+         0 2px 4px -1px rgba(0, 0, 0, 0.02);
+       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
+         0 4px 6px -2px rgba(0, 0, 0, 0.02);
+       --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+         inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+
+       /* Animation */
+       --duration-fast: 150ms;
+       --duration-normal: 250ms;
+       --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+       /* Layout */
+       --container-sm: 640px;
+       --container-md: 768px;
+       --container-lg: 1024px;
+       --container-xl: 1280px;
+      }
+
+      /* Dark mode colors */
+      @media (prefers-color-scheme: dark) {
        :root {
-         /* Primitive Color Tokens */
-         --color-white: rgba(255, 255, 255, 1);
-         --color-black: rgba(0, 0, 0, 1);
-         --color-cream-50: rgba(252, 252, 249, 1);
-         --color-cream-100: rgba(255, 255, 253, 1);
-         --color-gray-200: rgba(245, 245, 245, 1);
-         --color-gray-300: rgba(167, 169, 169, 1);
-         --color-gray-400: rgba(119, 124, 124, 1);
-         --color-slate-500: rgba(98, 108, 113, 1);
-         --color-brown-600: rgba(94, 82, 64, 1);
-         --color-charcoal-700: rgba(31, 33, 33, 1);
-         --color-charcoal-800: rgba(38, 40, 40, 1);
-         --color-slate-900: rgba(19, 52, 59, 1);
-         --color-teal-300: rgba(50, 184, 198, 1);
-         --color-teal-400: rgba(45, 166, 178, 1);
-         --color-teal-500: rgba(29, 111, 182, 1);
-         --color-teal-600: rgba(26, 98, 161, 1);
-         --color-teal-700: rgba(23, 86, 140, 1);
-         --color-teal-800: rgba(41, 150, 161, 1);
-         --color-red-400: rgba(255, 84, 89, 1);
-         --color-red-500: rgba(192, 21, 47, 1);
-         --color-orange-400: rgba(230, 129, 97, 1);
-         --color-orange-500: rgba(168, 75, 47, 1);
-         --color-blue-400: rgba(59, 130, 246, 1);
-         --color-blue-500: rgba(37, 99, 235, 1);
-         --color-blue-600: rgba(29, 78, 216, 1);
-         --color-green-500: rgba(34, 197, 94, 1);
-         --color-green-400: rgba(52, 211, 153, 1);
-
-         /* RGB versions */
-         --color-brown-600-rgb: 94, 82, 64;
-         --color-teal-500-rgb: 29, 111, 182;
-         --color-slate-900-rgb: 19, 52, 59;
-         --color-slate-500-rgb: 98, 108, 113;
-         --color-red-500-rgb: 192, 21, 47;
-         --color-red-400-rgb: 255, 84, 89;
-         --color-orange-500-rgb: 168, 75, 47;
-         --color-orange-400-rgb: 230, 129, 97;
-         --color-blue-400-rgb: 59, 130, 246;
-         --color-green-500-rgb: 34, 197, 94;
-         --color-green-400-rgb: 52, 211, 153;
-
-         /* Background color tokens (Light Mode) */
-         --color-bg-1: rgba(59, 130, 246, 0.08); 
-         --color-bg-2: rgba(245, 158, 11, 0.08); 
-         --color-bg-3: rgba(34, 197, 94, 0.08);
-         --color-bg-4: rgba(239, 68, 68, 0.08);
-         --color-bg-5: rgba(147, 51, 234, 0.08);
-         --color-bg-6: rgba(249, 115, 22, 0.08);
-         --color-bg-7: rgba(236, 72, 153, 0.08);
-         --color-bg-8: rgba(6, 182, 212, 0.08); 
-
-         /* Semantic Color Tokens (Light Mode) */
-         --color-background: var(--color-cream-50);
-         --color-surface: var(--color-cream-100);
-         --color-text: var(--color-slate-900);
-         --color-text-secondary: var(--color-slate-500);
-         --color-primary: var(--color-teal-500);
-         --color-primary-hover: var(--color-teal-600);
-         --color-primary-active: var(--color-teal-700);
-         --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
-         --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
-         --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
-         --color-border: rgba(var(--color-brown-600-rgb), 0.2);
-         --color-btn-primary-text: var(--color-cream-50);
-         --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
-         --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
-         --color-error: var(--color-red-500);
-         --color-success: var(--color-green-500);
-         --color-warning: var(--color-orange-500);
-         --color-info: var(--color-slate-500);
-         --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
-         --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
-         --color-success-rgb: var(--color-green-500-rgb);
-
-         /* Common style patterns */
-         --focus-ring: 0 0 0 3px var(--color-focus-ring);
-         --focus-outline: 2px solid var(--color-primary);
-         --status-bg-opacity: 0.15;
-         --status-border-opacity: 0.25;
-         --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-         --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-         /* RGB versions for opacity control */
-         --color-error-rgb: 192, 21, 47;
-         --color-warning-rgb: 168, 75, 47;
-         --color-info-rgb: 98, 108, 113;
-
-         /* Typography */
-         --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
-           BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-         --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
-           Monaco, Consolas, monospace;
-         --font-size-xs: 11px;
-         --font-size-sm: 12px;
-         --font-size-base: 14px;
-         --font-size-md: 14px;
-         --font-size-lg: 16px;
-         --font-size-xl: 18px;
-         --font-size-2xl: 20px;
-         --font-size-3xl: 24px;
-         --font-size-4xl: 30px;
-         --font-weight-normal: 400;
-         --font-weight-medium: 500;
-         --font-weight-semibold: 550;
-         --font-weight-bold: 600;
-         --line-height-tight: 1.2;
-         --line-height-normal: 1.5;
-         --letter-spacing-tight: -0.01em;
-
-         /* Spacing */
-         --space-0: 0;
-         --space-1: 1px;
-         --space-2: 2px;
-         --space-4: 4px;
-         --space-6: 6px;
-         --space-8: 8px;
-         --space-10: 10px;
-         --space-12: 12px;
-         --space-16: 16px;
-         --space-20: 20px;
-         --space-24: 24px;
-         --space-32: 32px;
-
-         /* Border Radius */
-         --radius-sm: 6px;
-         --radius-base: 8px;
-         --radius-md: 10px;
-         --radius-lg: 12px;
-         --radius-full: 9999px;
-
-         /* Shadows */
-         --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
-         --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-         --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
-           0 2px 4px -1px rgba(0, 0, 0, 0.02);
-         --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
-           0 4px 6px -2px rgba(0, 0, 0, 0.02);
-         --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
-           inset 0 -1px 0 rgba(0, 0, 0, 0.03);
-
-         /* Animation */
-         --duration-fast: 150ms;
-         --duration-normal: 250ms;
-         --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
-
-         /* Layout */
-         --container-sm: 640px;
-         --container-md: 768px;
-         --container-lg: 1024px;
-         --container-xl: 1280px;
-       }
-
-       /* Dark mode colors */
-       @media (prefers-color-scheme: dark) {
-         :root {
-           /* RGB versions (Dark Mode) */
-           --color-gray-400-rgb: 119, 124, 124;
-           --color-gray-300-rgb: 167, 169, 169;
-           --color-gray-200-rgb: 245, 245, 245;
-           --color-blue-400-rgb: 59, 130, 246;
-           --color-green-400-rgb: 52, 211, 153;
-
-           /* Background color tokens (Dark Mode) */
-           --color-bg-1: rgba(29, 78, 216, 0.15); 
-           --color-bg-2: rgba(180, 83, 9, 0.15); 
-           --color-bg-3: rgba(21, 128, 61, 0.15); 
-           --color-bg-4: rgba(185, 28, 28, 0.15);
-           --color-bg-5: rgba(107, 33, 168, 0.15);
-           --color-bg-6: rgba(194, 65, 12, 0.15);
-           --color-bg-7: rgba(190, 24, 93, 0.15);
-           --color-bg-8: rgba(8, 145, 178, 0.15);
-
-           /* Semantic Color Tokens (Dark Mode) */
-           --color-background: var(--color-charcoal-700);
-           --color-surface: var(--color-charcoal-800);
-           --color-text: var(--color-gray-200);
-           --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-           --color-primary: var(--color-blue-400);
-           --color-primary-hover: var(--color-blue-500);
-           --color-primary-active: var(--color-blue-600);
-           --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
-           --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
-           --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
-           --color-border: rgba(var(--color-gray-400-rgb), 0.3);
-           --color-error: var(--color-red-400);
-           --color-success: var(--color-green-400);
-           --color-warning: var(--color-orange-400);
-           --color-info: var(--color-gray-300);
-           --color-focus-ring: rgba(var(--color-blue-400-rgb), 0.4);
-           --color-btn-primary-text: var(--color-slate-900);
-           --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
-           --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
-           --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
-             inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-           --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
-           --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
-           --color-success-rgb: var(--color-green-400-rgb);
-
-           /* RGB versions (Dark Mode) */
-           --color-error-rgb: var(--color-red-400-rgb);
-           --color-warning-rgb: var(--color-orange-400-rgb);
-           --color-info-rgb: var(--color-gray-300-rgb);
-         }
-       }
-
-       /* Data attribute for manual theme switching */
-       [data-color-scheme="dark"] {
+         /* RGB versions (Dark Mode) */
          --color-gray-400-rgb: 119, 124, 124;
          --color-gray-300-rgb: 167, 169, 169;
          --color-gray-200-rgb: 245, 245, 245;
          --color-blue-400-rgb: 59, 130, 246;
          --color-green-400-rgb: 52, 211, 153;
-         --color-bg-1: rgba(29, 78, 216, 0.15);
-         --color-bg-2: rgba(180, 83, 9, 0.15);
-         --color-bg-3: rgba(21, 128, 61, 0.15);
+
+         /* Background color tokens (Dark Mode) */
+         --color-bg-1: rgba(29, 78, 216, 0.15); 
+         --color-bg-2: rgba(180, 83, 9, 0.15); 
+         --color-bg-3: rgba(21, 128, 61, 0.15); 
          --color-bg-4: rgba(185, 28, 28, 0.15);
          --color-bg-5: rgba(107, 33, 168, 0.15);
          --color-bg-6: rgba(194, 65, 12, 0.15);
          --color-bg-7: rgba(190, 24, 93, 0.15);
          --color-bg-8: rgba(8, 145, 178, 0.15);
+
+         /* Semantic Color Tokens (Dark Mode) */
          --color-background: var(--color-charcoal-700);
          --color-surface: var(--color-charcoal-800);
          --color-text: var(--color-gray-200);
@@ -249,1366 +202,1421 @@
          --color-warning: var(--color-orange-400);
          --color-info: var(--color-gray-300);
          --color-focus-ring: rgba(var(--color-blue-400-rgb), 0.4);
-         --color-btn-primary-text: var(--color-cream-50);
-         --color-card-border: rgba(var(--color-gray-400-rgb), 0.15);
+         --color-btn-primary-text: var(--color-slate-900);
+         --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
          --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
          --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
            inset 0 -1px 0 rgba(0, 0, 0, 0.15);
          --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
          --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
          --color-success-rgb: var(--color-green-400-rgb);
+
+         /* RGB versions (Dark Mode) */
          --color-error-rgb: var(--color-red-400-rgb);
          --color-warning-rgb: var(--color-orange-400-rgb);
          --color-info-rgb: var(--color-gray-300-rgb);
        }
+      }
 
-       [data-color-scheme="light"] {
-         --color-brown-600-rgb: 94, 82, 64;
-         --color-teal-500-rgb: 33, 128, 141;
-         --color-slate-900-rgb: 19, 52, 59;
-         --color-background: var(--color-cream-50);
-         --color-surface: var(--color-cream-100);
-         --color-text: var(--color-slate-900);
-         --color-text-secondary: var(--color-slate-500);
-         --color-primary: var(--color-teal-500);
-         --color-primary-hover: var(--color-teal-600);
-         --color-primary-active: var(--color-teal-700);
-         --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
-         --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
-         --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
-         --color-border: rgba(var(--color-brown-600-rgb), 0.2);
-         --color-btn-primary-text: var(--color-cream-50);
-         --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
-         --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
-         --color-error: var(--color-red-500);
-         --color-success: var(--color-green-500);
-         --color-warning: var(--color-orange-500);
-         --color-info: var(--color-slate-500);
-         --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
-         --color-success-rgb: var(--color-green-500-rgb);
-         --color-error-rgb: var(--color-red-500-rgb);
-         --color-warning-rgb: var(--color-orange-500-rgb);
-         --color-info-rgb: var(--color-slate-500-rgb);
-       }
+      /* Data attribute for manual theme switching */
+      [data-color-scheme="dark"] {
+       --color-gray-400-rgb: 119, 124, 124;
+       --color-gray-300-rgb: 167, 169, 169;
+       --color-gray-200-rgb: 245, 245, 245;
+       --color-blue-400-rgb: 59, 130, 246;
+       --color-green-400-rgb: 52, 211, 153;
+       --color-bg-1: rgba(29, 78, 216, 0.15);
+       --color-bg-2: rgba(180, 83, 9, 0.15);
+       --color-bg-3: rgba(21, 128, 61, 0.15);
+       --color-bg-4: rgba(185, 28, 28, 0.15);
+       --color-bg-5: rgba(107, 33, 168, 0.15);
+       --color-bg-6: rgba(194, 65, 12, 0.15);
+       --color-bg-7: rgba(190, 24, 93, 0.15);
+       --color-bg-8: rgba(8, 145, 178, 0.15);
+       --color-background: var(--color-charcoal-700);
+       --color-surface: var(--color-charcoal-800);
+       --color-text: var(--color-gray-200);
+       --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+       --color-primary: var(--color-blue-400);
+       --color-primary-hover: var(--color-blue-500);
+       --color-primary-active: var(--color-blue-600);
+       --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+       --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+       --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+       --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+       --color-error: var(--color-red-400);
+       --color-success: var(--color-green-400);
+       --color-warning: var(--color-orange-400);
+       --color-info: var(--color-gray-300);
+       --color-focus-ring: rgba(var(--color-blue-400-rgb), 0.4);
+       --color-btn-primary-text: var(--color-cream-50);
+       --color-card-border: rgba(var(--color-gray-400-rgb), 0.15);
+       --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+       --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+         inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+       --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+       --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+       --color-success-rgb: var(--color-green-400-rgb);
+       --color-error-rgb: var(--color-red-400-rgb);
+       --color-warning-rgb: var(--color-orange-400-rgb);
+       --color-info-rgb: var(--color-gray-300-rgb);
+      }
 
-       /* Base <html> style (del CRM) */
-       html {
-         font-size: var(--font-size-base);
-         font-family: var(--font-family-base);
-         line-height: var(--line-height-normal);
-         color: var(--color-text);
+      [data-color-scheme="light"] {
+       --color-brown-600-rgb: 94, 82, 64;
+       --color-teal-500-rgb: 33, 128, 141;
+       --color-slate-900-rgb: 19, 52, 59;
+       --color-background: var(--color-cream-50);
+       --color-surface: var(--color-cream-100);
+       --color-text: var(--color-slate-900);
+       --color-text-secondary: var(--color-slate-500);
+       --color-primary: var(--color-teal-500);
+       --color-primary-hover: var(--color-teal-600);
+       --color-primary-active: var(--color-teal-700);
+       --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+       --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+       --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+       --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+       --color-btn-primary-text: var(--color-cream-50);
+       --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+       --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+       --color-error: var(--color-red-500);
+       --color-success: var(--color-green-500);
+       --color-warning: var(--color-orange-500);
+       --color-info: var(--color-slate-500);
+       --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+       --color-success-rgb: var(--color-green-500-rgb);
+       --color-error-rgb: var(--color-red-500-rgb);
+       --color-warning-rgb: var(--color-orange-500-rgb);
+       --color-info-rgb: var(--color-slate-500-rgb);
+      }
+
+      /* Base <html> style (del CRM) */
+      html {
+       font-size: var(--font-size-base);
+       font-family: var(--font-family-base);
+       line-height: var(--line-height-normal);
+       color: var(--color-text);
+       background-color: var(--color-background);
+       -webkit-font-smoothing: antialiased;
+       box-sizing: border-box;
+      }
+
+      /* Base <body> (necesario para resetear) */
+      body {
+       margin: 0;
+       padding: 0;
+       font-family: var(--font-family-base); /* Coherencia de fuente */
+      }
+
+      *,
+      *::before,
+      *::after {
+       box-sizing: inherit;
+      }
+
+      /*
+       * INICIO: LÓGICA DE CONTENEDORES DE INTEGRACIÓN
+       * Aquí resolvemos el conflicto de layout.
+       */
+
+      /* Estilos del <body> del CRM aplicados a #crmWrapper */
+      #crmWrapper {
+         margin: 0;
          background-color: var(--color-background);
-         -webkit-font-smoothing: antialiased;
-         box-sizing: border-box;
-       }
-
-       /* Base <body> (necesario para resetear) */
-       body {
-         margin: 0;
-         padding: 0;
-         font-family: var(--font-family-base); /* Coherencia de fuente */
-       }
-
-       *,
-       *::before,
-       *::after {
-         box-sizing: inherit;
-       }
-
-       /*
-        * INICIO: LÓGICA DE CONTENEDORES DE INTEGRACIÓN
-        * Aquí resolvemos el conflicto de layout.
-        */
-
-       /* Estilos del <body> del CRM aplicados a #crmWrapper */
-       #crmWrapper {
-           margin: 0;
-           background-color: var(--color-background);
-           color: var(--color-text);
-           display: flex; /* <-- CRÍTICO para layout sidebar+main */
-           min-height: 100vh;
-           overflow-x: hidden;
-       }
-
-       /* Estilos del <body> del Login aplicados a #authWrapper */
-       #authWrapper {
-           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-           background-color: #f0f2f5;
-           display: flex; /* <-- CRÍTICO para centrar el form */
-           justify-content: center;
-           align-items: center;
-           min-height: 100vh;
-           width: 100%;
-           margin: 0;
-           padding: 1rem;
-           box-sizing: border-box;
-       }
-       
-       /*
-        * FIN: LÓGICA DE CONTENEDORES DE INTEGRACIÓN
-        */
-
-
-       /* Typography (CRM) */
-       h1, h2, h3, h4, h5, h6 {
-         margin: 0;
-         font-weight: var(--font-weight-semibold);
-         line-height: var(--line-height-tight);
          color: var(--color-text);
-         letter-spacing: var(--letter-spacing-tight);
-       }
-       h1 { font-size: var(--font-size-4xl); }
-       h2 { font-size: var(--font-size-3xl); }
-       h3 { font-size: var(--font-size-2xl); }
-       h4 { font-size: var(--font-size-xl); }
-       h5 { font-size: var(--font-size-lg); }
-       h6 { font-size: var(--font-size-md); }
-       p { margin: 0 0 var(--space-16) 0; }
-       a {
-         color: var(--color-primary);
-         text-decoration: none;
-         transition: color var(--duration-fast) var(--ease-standard);
-       }
-       a:hover { color: var(--color-primary-hover); }
-       code, pre {
-         font-family: var(--font-family-mono);
-         font-size: calc(var(--font-size-base) * 0.95);
-         background-color: var(--color-secondary);
-         border-radius: var(--radius-sm);
-       }
-       code { padding: var(--space-1) var(--space-4); }
-       pre {
-         padding: var(--space-16);
-         margin: var(--space-16) 0;
-         overflow: auto;
-         border: 1px solid var(--color-border);
-       }
-       pre code { background: none; padding: 0; }
+         display: flex; /* <-- CRÍTICO para layout sidebar+main */
+         min-height: 100vh;
+         overflow-x: hidden;
+      }
 
-       /* Buttons (CRM) */
-       .btn {
-         display: inline-flex;
+      /* Estilos del <body> del Login aplicados a #authWrapper */
+      #authWrapper {
+         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         background-color: #f0f2f5;
+         display: flex; /* <-- CRÍTICO para centrar el form */
+         justify-content: center;
+         align-items: center;
+         min-height: 100vh;
+         width: 100%;
+         margin: 0;
+         padding: 1rem;
+         box-sizing: border-box;
+      }
+      
+      /*
+       * FIN: LÓGICA DE CONTENEDORES DE INTEGRACIÓN
+       */
+
+
+      /* Typography (CRM) */
+      h1, h2, h3, h4, h5, h6 {
+       margin: 0;
+       font-weight: var(--font-weight-semibold);
+       line-height: var(--line-height-tight);
+       color: var(--color-text);
+       letter-spacing: var(--letter-spacing-tight);
+      }
+      h1 { font-size: var(--font-size-4xl); }
+      h2 { font-size: var(--font-size-3xl); }
+      h3 { font-size: var(--font-size-2xl); }
+      h4 { font-size: var(--font-size-xl); }
+      h5 { font-size: var(--font-size-lg); }
+      h6 { font-size: var(--font-size-md); }
+      p { margin: 0 0 var(--space-16) 0; }
+      a {
+       color: var(--color-primary);
+       text-decoration: none;
+       transition: color var(--duration-fast) var(--ease-standard);
+      }
+      a:hover { color: var(--color-primary-hover); }
+      code, pre {
+       font-family: var(--font-family-mono);
+       font-size: calc(var(--font-size-base) * 0.95);
+       background-color: var(--color-secondary);
+       border-radius: var(--radius-sm);
+      }
+      code { padding: var(--space-1) var(--space-4); }
+      pre {
+       padding: var(--space-16);
+       margin: var(--space-16) 0;
+       overflow: auto;
+       border: 1px solid var(--color-border);
+      }
+      pre code { background: none; padding: 0; }
+
+      /* Buttons (CRM) */
+      .btn {
+       display: inline-flex;
+       align-items: center;
+       justify-content: center;
+       padding: var(--space-8) var(--space-16);
+       border-radius: var(--radius-base);
+       font-size: var(--font-size-base);
+       font-weight: 500;
+       line-height: 1.5;
+       cursor: pointer;
+       transition: all var(--duration-normal) var(--ease-standard);
+       border: none;
+       text-decoration: none;
+       position: relative;
+      }
+      .btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+      .btn--primary {
+       background: var(--color-primary);
+       color: var(--color-btn-primary-text);
+      }
+      .btn--primary:hover { background: var(--color-primary-hover); }
+      .btn--primary:active { background: var(--color-primary-active); }
+      .btn--secondary {
+       background: var(--color-secondary);
+       color: var(--color-text);
+      }
+      .btn--secondary:hover { background: var(--color-secondary-hover); }
+      .btn--secondary:active { background: var(--color-secondary-active); }
+      .btn--outline {
+       background: transparent;
+       border: 1px solid var(--color-border);
+       color: var(--color-text);
+      }
+      .btn--danger {
+         background-color: var(--color-error);
+         color: white;
+      }
+      .btn--danger:hover { background-color: rgba(var(--color-red-500-rgb), 0.8); }
+      .btn--outline:hover { background: var(--color-secondary); }
+      .btn--sm {
+       padding: var(--space-4) var(--space-12);
+       font-size: var(--font-size-sm);
+       border-radius: var(--radius-sm);
+      }
+      .btn--lg {
+       padding: var(--space-10) var(--space-20);
+       font-size: var(--font-size-lg);
+       border-radius: var(--radius-md);
+      }
+      .btn--full-width { width: 100%; }
+      .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+      /* Form elements (CRM) */
+      .form-control {
+       display: block;
+       width: 100%;
+       padding: var(--space-8) var(--space-12);
+       font-size: var(--font-size-md);
+       line-height: 1.5;
+       color: var(--color-text);
+       background-color: var(--color-surface);
+       border: 1px solid var(--color-border);
+       border-radius: var(--radius-base);
+       transition: border-color var(--duration-fast) var(--ease-standard),
+         box-shadow var(--duration-fast) var(--ease-standard);
+      }
+      textarea.form-control {
+       font-family: var(--font-family-base);
+       font-size: var(--font-size-base);
+      }
+      select.form-control {
+       padding: var(--space-8) var(--space-12);
+       -webkit-appearance: none;
+       -moz-appearance: none;
+       appearance: none;
+       background-image: var(--select-caret-light);
+       background-repeat: no-repeat;
+       background-position: right var(--space-12) center;
+       background-size: 16px;
+       padding-right: var(--space-32);
+      }
+      @media (prefers-color-scheme: dark) {
+       select.form-control { background-image: var(--select-caret-dark); }
+      }
+      [data-color-scheme="dark"] select.form-control { background-image: var(--select-caret-dark); }
+      [data-color-scheme="light"] select.form-control { background-image: var(--select-caret-light); }
+      .form-control:focus {
+       border-color: var(--color-primary);
+       outline: var(--focus-outline);
+      }
+      .form-label {
+       display: block;
+       margin-bottom: var(--space-8);
+       font-weight: var(--font-weight-medium);
+       font-size: var(--font-size-sm);
+      }
+      .form-group { margin-bottom: var(--space-16); }
+
+      /* Card component (CRM) */
+      .card {
+       background-color: var(--color-surface);
+       border-radius: var(--radius-lg);
+       border: 1px solid var(--color-card-border);
+       box-shadow: var(--shadow-sm);
+       overflow: hidden;
+       transition: box-shadow var(--duration-normal) var(--ease-standard);
+      }
+      .card:hover { box-shadow: var(--shadow-md); }
+      .card__body { padding: var(--space-16); }
+      .card__header,
+      .card__footer {
+       padding: var(--space-16);
+       border-bottom: 1px solid var(--color-card-border-inner);
+      }
+
+      /* Status indicators (CRM) */
+      .status {
+       display: inline-flex;
+       align-items: center;
+       padding: var(--space-6) var(--space-12);
+       border-radius: var(--radius-full);
+       font-weight: var(--font-weight-medium);
+       font-size: var(--font-size-sm);
+      }
+      .status--success {
+       background-color: rgba(var(--color-success-rgb), var(--status-bg-opacity));
+       color: var(--color-success);
+       border: 1px solid rgba(var(--color-success-rgb), var(--status-border-opacity));
+      }
+      .status--error {
+       background-color: rgba(var(--color-error-rgb), var(--status-bg-opacity));
+       color: var(--color-error);
+       border: 1px solid rgba(var(--color-error-rgb), var(--status-border-opacity));
+      }
+      .status--warning {
+       background-color: rgba(var(--color-warning-rgb), var(--status-bg-opacity));
+       color: var(--color-warning);
+       border: 1px solid rgba(var(--color-warning-rgb), var(--status-border-opacity));
+      }
+      .status--info {
+       background-color: rgba(var(--color-info-rgb), var(--status-bg-opacity));
+       color: var(--color-info);
+       border: 1px solid rgba(var(--color-info-rgb), var(--status-border-opacity));
+      }
+
+      /* Container layout (CRM) */
+      .container {
+       width: 100%;
+       margin-right: auto;
+       margin-left: auto;
+       padding-right: var(--space-16);
+       padding-left: var(--space-16);
+      }
+      @media (min-width: 640px) { .container { max-width: var(--container-sm); } }
+      @media (min-width: 768px) { .container { max-width: var(--container-md); } }
+      @media (min-width: 1024px) { .container { max-width: var(--container-lg); } }
+      @media (min-width: 1280px) { .container { max-width: var(--container-xl); } }
+
+      /* Utility classes (CRM) */
+      .flex { display: flex; }
+      .flex-col { flex-direction: column; }
+      .items-center { align-items: center; }
+      .justify-center { justify-content: center; }
+      .justify-between { justify-content: space-between; }
+      .gap-4 { gap: var(--space-4); }
+      .gap-8 { gap: var(--space-8); }
+      .gap-16 { gap: var(--space-16); }
+      .m-0 { margin: 0; }
+      .mt-8 { margin-top: var(--space-8); }
+      .mb-8 { margin-bottom: var(--space-8); }
+      .mx-8 { margin-left: var(--space-8); margin-right: var(--space-8); }
+      .my-8 { margin-top: var(--space-8); margin-bottom: var(--space-8); }
+      .p-0 { padding: 0; }
+      .py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+      .px-8 { padding-left: var(--space-8); padding-right: var(--space-8); }
+      .py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); }
+      .px-16 { padding-left: var(--space-16); padding-right: var(--space-16); }
+      .block { display: block; }
+      
+      /* .hidden debe ser específico para que funcione */
+      .hidden { display: none !important; }
+
+      /* Accessibility (CRM) */
+      .sr-only {
+       position: absolute;
+       width: 1px;
+       height: 1px;
+       padding: 0;
+       margin: -1px;
+       overflow: hidden;
+       clip: rect(0, 0, 0, 0);
+       white-space: nowrap;
+       border-width: 0;
+      }
+      :focus-visible {
+       outline: var(--focus-outline);
+       outline-offset: 2px;
+      }
+
+      /* Dark mode specifics (CRM) */
+      [data-color-scheme="dark"] .btn--outline {
+       border: 1px solid var(--color-border-secondary);
+      }
+      @font-face {
+       font-family: 'FKGroteskNeue';
+       src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
+         format('woff2');
+      }
+
+      /* Sidebar Styles (CRM) */
+      .sidebar {
+         width: 280px;
+         background-color: var(--color-surface);
+         border-right: 1px solid var(--color-border);
+         display: flex;
+         flex-direction: column;
+         transition: width var(--duration-normal) var(--ease-standard);
+         position: fixed;
+         left: 0;
+         top: 0;
+         height: 100vh;
+         z-index: 1000;
+      }
+      .sidebar.collapsed { width: 70px; }
+      .sidebar-header {
+         padding: var(--space-20);
+         border-bottom: 1px solid var(--color-border);
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+      }
+      .logo {
+         display: flex;
+         align-items: center;
+         gap: var(--space-12);
+         font-weight: var(--font-weight-bold);
+         font-size: var(--font-size-xl);
+         color: var(--color-primary);
+      }
+      .sidebar.collapsed .logo-text { display: none; }
+      .sidebar-toggle {
+         background: none;
+         border: none;
+         color: var(--color-text-secondary);
+         cursor: pointer;
+         padding: var(--space-8);
+         border-radius: var(--radius-base);
+         transition: background-color var(--duration-fast) var(--ease-standard);
+      }
+      .sidebar-toggle:hover { background-color: var(--color-secondary); }
+      .sidebar-menu {
+         flex-grow: 1;
+         overflow-y: auto;
+         padding: var(--space-16);
+      }
+      .sidebar-menu ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         display: flex;
+         flex-direction: column;
+         gap: var(--space-4);
+      }
+      .menu-item {
+         display: flex;
+         align-items: center;
+         gap: var(--space-12);
+         padding: var(--space-12) var(--space-16);
+         border-radius: var(--radius-base);
+         text-decoration: none;
+         color: var(--color-text-secondary);
+         transition: all var(--duration-fast) var(--ease-standard);
+         font-weight: var(--font-weight-medium);
+      }
+      .menu-item:hover {
+         background-color: var(--color-secondary);
+         color: var(--color-text);
+      }
+      .menu-item.active {
+         background-color: var(--color-primary);
+         color: var(--color-btn-primary-text);
+      }
+      .menu-item i { width: 20px; text-align: center; }
+      .sidebar.collapsed .menu-item span { display: none; }
+      
+      /* Sidebar Footer (Perfil y Logout) */
+      .sidebar-footer {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: var(--space-16);
+         border-top: 1px solid var(--color-border);
+      }
+      .user-profile {
+         display: flex;
+         align-items: center;
+         gap: var(--space-12);
+         flex-grow: 1; 
+         min-width: 0; 
+      }
+      .user-avatar {
+         width: 40px;
+         height: 40px;
+         border-radius: var(--radius-full);
+         background-color: var(--color-primary);
+         color: var(--color-btn-primary-text);
+         display: flex;
          align-items: center;
          justify-content: center;
-         padding: var(--space-8) var(--space-16);
-         border-radius: var(--radius-base);
-         font-size: var(--font-size-base);
-         font-weight: 500;
-         line-height: 1.5;
-         cursor: pointer;
-         transition: all var(--duration-normal) var(--ease-standard);
-         border: none;
-         text-decoration: none;
-         position: relative;
-       }
-       .btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
-       .btn--primary {
-         background: var(--color-primary);
-         color: var(--color-btn-primary-text);
-       }
-       .btn--primary:hover { background: var(--color-primary-hover); }
-       .btn--primary:active { background: var(--color-primary-active); }
-       .btn--secondary {
-         background: var(--color-secondary);
-         color: var(--color-text);
-       }
-       .btn--secondary:hover { background: var(--color-secondary-hover); }
-       .btn--secondary:active { background: var(--color-secondary-active); }
-       .btn--outline {
-         background: transparent;
-         border: 1px solid var(--color-border);
-         color: var(--color-text);
-       }
-       .btn--danger {
-           background-color: var(--color-error);
-           color: white;
-       }
-       .btn--danger:hover { background-color: rgba(var(--color-red-500-rgb), 0.8); }
-       .btn--outline:hover { background: var(--color-secondary); }
-       .btn--sm {
-         padding: var(--space-4) var(--space-12);
+         font-weight: var(--font-weight-bold);
          font-size: var(--font-size-sm);
-         border-radius: var(--radius-sm);
-       }
-       .btn--lg {
-         padding: var(--space-10) var(--space-20);
-         font-size: var(--font-size-lg);
-         border-radius: var(--radius-md);
-       }
-       .btn--full-width { width: 100%; }
-       .btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-       /* Form elements (CRM) */
-       .form-control {
-         display: block;
-         width: 100%;
-         padding: var(--space-8) var(--space-12);
-         font-size: var(--font-size-md);
-         line-height: 1.5;
-         color: var(--color-text);
-         background-color: var(--color-surface);
-         border: 1px solid var(--color-border);
-         border-radius: var(--radius-base);
-         transition: border-color var(--duration-fast) var(--ease-standard),
-           box-shadow var(--duration-fast) var(--ease-standard);
-       }
-       textarea.form-control {
-         font-family: var(--font-family-base);
-         font-size: var(--font-size-base);
-       }
-       select.form-control {
-         padding: var(--space-8) var(--space-12);
-         -webkit-appearance: none;
-         -moz-appearance: none;
-         appearance: none;
-         background-image: var(--select-caret-light);
-         background-repeat: no-repeat;
-         background-position: right var(--space-12) center;
-         background-size: 16px;
-         padding-right: var(--space-32);
-       }
-       @media (prefers-color-scheme: dark) {
-         select.form-control { background-image: var(--select-caret-dark); }
-       }
-       [data-color-scheme="dark"] select.form-control { background-image: var(--select-caret-dark); }
-       [data-color-scheme="light"] select.form-control { background-image: var(--select-caret-light); }
-       .form-control:focus {
-         border-color: var(--color-primary);
-         outline: var(--focus-outline);
-       }
-       .form-label {
-         display: block;
-         margin-bottom: var(--space-8);
+         flex-shrink: 0; 
+      }
+      .user-info { 
+         display: flex; 
+         flex-direction: column; 
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
+      }
+      .user-name {
          font-weight: var(--font-weight-medium);
          font-size: var(--font-size-sm);
-       }
-       .form-group { margin-bottom: var(--space-16); }
+      }
+      .user-role {
+         font-size: var(--font-size-xs);
+         color: var(--color-text-secondary);
+      }
+      .sidebar.collapsed .user-info { display: none; }
+      
+      .btn-logout {
+         background: none;
+         border: none;
+         color: var(--color-text-secondary);
+         font-size: var(--font-size-lg);
+         cursor: pointer;
+         padding: var(--space-8);
+         border-radius: var(--radius-base);
+         transition: all var(--duration-fast) var(--ease-standard);
+         flex-shrink: 0; 
+         margin-left: var(--space-8);
+      }
+      .btn-logout:hover {
+         background-color: var(--color-secondary);
+         color: var(--color-text);
+      }
 
-       /* Card component (CRM) */
-       .card {
+      .sidebar.collapsed .sidebar-footer {
+         flex-direction: column;
+         align-items: center;
+         gap: var(--space-12);
+      }
+      .sidebar.collapsed .user-profile {
+         flex-grow: 0;
+      }
+      .sidebar.collapsed .btn-logout {
+         margin: 0;
+         width: 100%;
+      }
+
+      /* Main Content Styles (CRM) */
+      .main-content {
+         flex: 1;
+         margin-left: 280px;
+         transition: margin-left var(--duration-normal) var(--ease-standard);
+         display: flex;
+         flex-direction: column;
+         overflow-x: hidden;
+         max-width: 100%;
+      }
+      .sidebar.collapsed + .main-content { margin-left: 70px; }
+
+      /* Header Styles (CRM) */
+      .header {
+         background-color: var(--color-surface);
+         border-bottom: 1px solid var(--color-border);
+         padding: var(--space-16) var(--space-24);
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         position: sticky;
+         top: 0;
+         z-index: 100;
+      }
+      .header-left h1 {
+         margin: 0 0 var(--space-4) 0;
+         font-size: var(--font-size-3xl);
+         font-weight: var(--font-weight-bold);
+      }
+      .breadcrumb {
+         display: flex;
+         align-items: center;
+         gap: var(--space-8);
+         font-size: var(--font-size-sm);
+         color: var(--color-text-secondary);
+      }
+      .header-right {
+         display: flex;
+         align-items: center;
+         gap: var(--space-16);
+      }
+      .search-box { position: relative; }
+      .search-box input {
+         padding: var(--space-8) var(--space-12) var(--space-8) var(--space-32);
+         border: 1px solid var(--color-border);
+         border-radius: var(--radius-base);
+         background-color: var(--color-background);
+         color: var(--color-text);
+         font-size: var(--font-size-sm);
+         width: 250px;
+      }
+      .search-box i {
+         position: absolute;
+         left: var(--space-12);
+         top: 50%;
+         transform: translateY(-50%);
+         color: var(--color-text-secondary);
+      }
+      .theme-toggle {
+         background: none;
+         border: 1px solid var(--color-border);
+         border-radius: var(--radius-base);
+         padding: var(--space-8);
+         cursor: pointer;
+         color: var(--color-text-secondary);
+         transition: all var(--duration-fast) var(--ease-standard);
+      }
+      .theme-toggle:hover {
+         background-color: var(--color-secondary);
+         color: var(--color-text);
+      }
+
+      /* Views (CRM) */
+      .view {
+         flex: 1;
+         padding: var(--space-24);
+         display: none;
+      }
+      .view.active { display: block; }
+
+      /* Metrics Cards (CRM) */
+      .metrics-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+         gap: var(--space-20);
+         margin-bottom: var(--space-32);
+      }
+      .metric-card {
+         background-color: var(--color-surface);
+         border: 1px solid var(--color-card-border);
+         border-radius: var(--radius-lg);
+         padding: var(--space-20);
+         display: flex;
+         align-items: center;
+         gap: var(--space-16);
+         transition: box-shadow var(--duration-normal) var(--ease-standard);
+      }
+      .metric-card:hover { box-shadow: var(--shadow-md); }
+      .metric-icon {
+         width: 60px;
+         height: 60px;
+         border-radius: var(--radius-lg);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: var(--font-size-xl);
+         color: white;
+      }
+      .metric-icon.sales { background: linear-gradient(135deg, var(--color-teal-500), var(--color-teal-600)); }
+      .metric-icon.deals { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+      .metric-icon.contacts { background: linear-gradient(135deg, #10B981, #059669); }
+      .metric-icon.conversion { background: linear-gradient(135deg, #F59E0B, #D97706); }
+      .metric-content h3 {
+         font-size: var(--font-size-3xl);
+         font-weight: var(--font-weight-bold);
+         margin: 0 0 var(--space-4) 0;
+      }
+      .metric-content p {
+         color: var(--color-text-secondary);
+         margin: 0 0 var(--space-8) 0;
+         font-size: var(--font-size-sm);
+      }
+      .metric-change {
+         font-size: var(--font-size-sm);
+         font-weight: var(--font-weight-medium);
+         padding: var(--space-2) var(--space-8);
+         border-radius: var(--radius-full);
+      }
+      .metric-change.positive {
+         background-color: rgba(var(--color-success-rgb), 0.1);
+         color: var(--color-success);
+      }
+      .metric-change.negative {
+         background-color: rgba(var(--color-error-rgb), 0.1);
+         color: var(--color-error);
+      }
+
+      /* Dashboard Grid (CRM) */
+      .dashboard-grid {
+         display: grid;
+         grid-template-columns: 2fr 1fr;
+         gap: var(--space-24);
+      }
+      .chart-card { height: 400px; }
+      .chart-container { width: 100%; height: 100%; }
+      .activity-feed {
+         display: flex;
+         flex-direction: column;
+         gap: var(--space-16);
+         max-height: 300px;
+         overflow-y: auto;
+      }
+      .activity-item {
+         display: flex;
+         gap: var(--space-12);
+         padding: var(--space-12);
+         border-radius: var(--radius-base);
+         background-color: var(--color-background);
+      }
+      .activity-avatar {
+         width: 32px;
+         height: 32px;
+         border-radius: var(--radius-full);
+         background-color: var(--color-primary);
+         color: var(--color-btn-primary-text);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: var(--font-size-xs);
+         font-weight: var(--font-weight-bold);
+         flex-shrink: 0;
+      }
+      .activity-content { flex: 1; }
+      .activity-text {
+         font-size: var(--font-size-sm);
+         margin: 0 0 var(--space-4) 0;
+      }
+      .activity-time {
+         font-size: var(--font-size-xs);
+         color: var(--color-text-secondary);
+      }
+
+      /* Pipeline Board (CRM) */
+      .pipeline-header { margin-bottom: var(--space-24); }
+      .pipeline-filters {
+         display: flex;
+         gap: var(--space-16);
+         align-items: center;
+      }
+      .pipeline-filters .form-control {
+         width: auto;
+         min-width: 200px;
+      }
+      .pipeline-board {
+         display: flex;
+         gap: var(--space-20);
+         overflow-x: auto;
+         padding-bottom: var(--space-16);
+      }
+      .pipeline-column {
+         min-width: 300px;
          background-color: var(--color-surface);
          border-radius: var(--radius-lg);
          border: 1px solid var(--color-card-border);
-         box-shadow: var(--shadow-sm);
-         overflow: hidden;
-         transition: box-shadow var(--duration-normal) var(--ease-standard);
-       }
-       .card:hover { box-shadow: var(--shadow-md); }
-       .card__body { padding: var(--space-16); }
-       .card__header,
-       .card__footer {
+         flex-shrink: 0;
+      }
+      .pipeline-column-header {
          padding: var(--space-16);
          border-bottom: 1px solid var(--color-card-border-inner);
-       }
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      .column-title {
+         font-weight: var(--font-weight-semibold);
+         display: flex;
+         align-items: center;
+         gap: var(--space-8);
+      }
+      .column-indicator {
+         width: 12px;
+         height: 12px;
+         border-radius: var(--radius-full);
+      }
+      .column-count {
+         background-color: var(--color-secondary);
+         color: var(--color-text);
+         border-radius: var(--radius-full);
+         padding: var(--space-2) var(--space-8);
+         font-size: var(--font-size-xs);
+         font-weight: var(--font-weight-medium);
+      }
+      .pipeline-column-body {
+         padding: var(--space-16);
+         min-height: 400px;
+         display: flex;
+         flex-direction: column;
+         gap: var(--space-12);
+      }
+      .deal-card {
+         background-color: var(--color-background);
+         border: 1px solid var(--color-card-border);
+         border-radius: var(--radius-base);
+         padding: var(--space-16);
+         cursor: move;
+         transition: all var(--duration-fast) var(--ease-standard);
+      }
+      .deal-card:hover {
+         box-shadow: var(--shadow-md);
+         transform: translateY(-2px);
+      }
+      .deal-card.dragging { opacity: 0.5; transform: rotate(5deg); }
+      .deal-title {
+         font-weight: var(--font-weight-semibold);
+         margin: 0 0 var(--space-8) 0;
+         font-size: var(--font-size-base);
+      }
+      .deal-amount {
+         font-size: var(--font-size-lg);
+         font-weight: var(--font-weight-bold);
+         color: var(--color-primary);
+         margin: 0 0 var(--space-8) 0;
+      }
+      .deal-meta {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         font-size: var(--font-size-sm);
+         color: var(--color-text-secondary);
+      }
+      .deal-contact {
+         display: flex;
+         align-items: center;
+         gap: var(--space-6);
+      }
+      .deal-probability {
+         background-color: var(--color-secondary);
+         padding: var(--space-2) var(--space-6);
+         border-radius: var(--radius-base);
+         font-size: var(--font-size-xs);
+      }
 
-       /* Status indicators (CRM) */
-       .status {
+      /* Contacts/Companies/Deals Grids (CRM) */
+      .view-header { margin-bottom: var(--space-24); }
+      .view-filters {
+         display: flex;
+         gap: var(--space-16);
+         align-items: center;
+      }
+      .view-filters .form-control {
+         width: auto;
+         min-width: 200px;
+      }
+      .contacts-grid,
+      .companies-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+         gap: var(--space-20);
+      }
+      .contact-card,
+      .company-card {
+         background-color: var(--color-surface);
+         border: 1px solid var(--color-card-border);
+         border-radius: var(--radius-lg);
+         padding: var(--space-20);
+         transition: all var(--duration-normal) var(--ease-standard);
+         cursor: pointer;
+      }
+      .contact-card:hover,
+      .company-card:hover {
+         box-shadow: var(--shadow-md);
+         transform: translateY(-2px);
+      }
+      .contact-header,
+      .company-header {
+         display: flex;
+         align-items: center;
+         gap: var(--space-12);
+         margin-bottom: var(--space-16);
+      }
+      .contact-avatar,
+      .company-avatar {
+         width: 50px;
+         height: 50px;
+         border-radius: var(--radius-full);
+         background-color: var(--color-primary);
+         color: var(--color-btn-primary-text);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-weight: var(--font-weight-bold);
+         font-size: var(--font-size-lg);
+      }
+      .contact-info h3,
+      .company-info h3 {
+         margin: 0 0 var(--space-4) 0;
+         font-size: var(--font-size-lg);
+         font-weight: var(--font-weight-semibold);
+      }
+      .contact-email,
+      .company-industry {
+         color: var(--color-text-secondary);
+         font-size: var(--font-size-sm);
+      }
+      .contact-details,
+      .company-details {
+         display: flex;
+         flex-direction: column;
+         gap: var(--space-8);
+      }
+      .contact-detail,
+      .company-detail {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         font-size: var(--font-size-sm);
+      }
+      .contact-tags {
+         display: flex;
+         flex-wrap: wrap;
+         gap: var(--space-6);
+         margin-top: var(--space-12);
+      }
+      .tag {
+         background-color: var(--color-secondary);
+         color: var(--color-text);
+         padding: var(--space-2) var(--space-8);
+         border-radius: var(--radius-full);
+         font-size: var(--font-size-xs);
+         font-weight: var(--font-weight-medium);
+      }
+
+      /* Deals Table (CRM) */
+      .deals-table-container {
+         background-color: var(--color-surface);
+         border-radius: var(--radius-lg);
+         border: 1px solid var(--color-card-border);
+         overflow: hidden;
+      }
+      .deals-table {
+         width: 100%;
+         border-collapse: collapse;
+      }
+      .deals-table th {
+         background-color: var(--color-background);
+         padding: var(--space-16);
+         text-align: left;
+         font-weight: var(--font-weight-semibold);
+         font-size: var(--font-size-sm);
+         color: var(--color-text-secondary);
+         border-bottom: 1px solid var(--color-card-border-inner);
+      }
+      .deals-table td {
+         padding: var(--space-16);
+         border-bottom: 1px solid var(--color-card-border-inner);
+         font-size: var(--font-size-sm);
+      }
+      .deals-table tbody tr:hover { background-color: var(--color-background); }
+      .stage-badge {
          display: inline-flex;
          align-items: center;
-         padding: var(--space-6) var(--space-12);
-         border-radius: var(--radius-full);
+         gap: var(--space-6);
+         padding: var(--space-4) var(--space-8);
+         border-radius: var(--radius-base);
+         font-size: var(--font-size-xs);
          font-weight: var(--font-weight-medium);
-         font-size: var(--font-size-sm);
-       }
-       .status--success {
-         background-color: rgba(var(--color-success-rgb), var(--status-bg-opacity));
-         color: var(--color-success);
-         border: 1px solid rgba(var(--color-success-rgb), var(--status-border-opacity));
-       }
-       .status--error {
-         background-color: rgba(var(--color-error-rgb), var(--status-bg-opacity));
-         color: var(--color-error);
-         border: 1px solid rgba(var(--color-error-rgb), var(--status-border-opacity));
-       }
-       .status--warning {
-         background-color: rgba(var(--color-warning-rgb), var(--status-bg-opacity));
-         color: var(--color-warning);
-         border: 1px solid rgba(var(--color-warning-rgb), var(--status-border-opacity));
-       }
-       .status--info {
-         background-color: rgba(var(--color-info-rgb), var(--status-bg-opacity));
-         color: var(--color-info);
-         border: 1px solid rgba(var(--color-info-rgb), var(--status-border-opacity));
-       }
-
-       /* Container layout (CRM) */
-       .container {
-         width: 100%;
-         margin-right: auto;
-         margin-left: auto;
-         padding-right: var(--space-16);
-         padding-left: var(--space-16);
-       }
-       @media (min-width: 640px) { .container { max-width: var(--container-sm); } }
-       @media (min-width: 768px) { .container { max-width: var(--container-md); } }
-       @media (min-width: 1024px) { .container { max-width: var(--container-lg); } }
-       @media (min-width: 1280px) { .container { max-width: var(--container-xl); } }
-
-       /* Utility classes (CRM) */
-       .flex { display: flex; }
-       .flex-col { flex-direction: column; }
-       .items-center { align-items: center; }
-       .justify-center { justify-content: center; }
-       .justify-between { justify-content: space-between; }
-       .gap-4 { gap: var(--space-4); }
-       .gap-8 { gap: var(--space-8); }
-       .gap-16 { gap: var(--space-16); }
-       .m-0 { margin: 0; }
-       .mt-8 { margin-top: var(--space-8); }
-       .mb-8 { margin-bottom: var(--space-8); }
-       .mx-8 { margin-left: var(--space-8); margin-right: var(--space-8); }
-       .my-8 { margin-top: var(--space-8); margin-bottom: var(--space-8); }
-       .p-0 { padding: 0; }
-       .py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
-       .px-8 { padding-left: var(--space-8); padding-right: var(--space-8); }
-       .py-16 { padding-top: var(--space-16); padding-bottom: var(--space-16); }
-       .px-16 { padding-left: var(--space-16); padding-right: var(--space-16); }
-       .block { display: block; }
-       
-       /* .hidden debe ser específico para que funcione */
-       .hidden { display: none !important; }
-
-       /* Accessibility (CRM) */
-       .sr-only {
-         position: absolute;
-         width: 1px;
-         height: 1px;
-         padding: 0;
-         margin: -1px;
+      }
+      .stage-indicator {
+         width: 8px;
+         height: 8px;
+         border-radius: var(--radius-full);
+      }
+      .probability-bar {
+         width: 60px;
+         height: 6px;
+         background-color: var(--color-secondary);
+         border-radius: var(--radius-full);
          overflow: hidden;
-         clip: rect(0, 0, 0, 0);
-         white-space: nowrap;
-         border-width: 0;
-       }
-       :focus-visible {
-         outline: var(--focus-outline);
-         outline-offset: 2px;
-       }
+      }
+      .probability-fill {
+         height: 100%;
+         background-color: var(--color-primary);
+         border-radius: var(--radius-full);
+         transition: width var(--duration-normal) var(--ease-standard);
+      }
+      .deal-actions { display: flex; gap: var(--space-8); }
+      .btn-icon {
+         background: none;
+         border: none;
+         color: var(--color-text-secondary);
+         padding: var(--space-4);
+         border-radius: var(--radius-sm);
+         cursor: pointer;
+         transition: all var(--duration-fast) var(--ease-standard);
+      }
+      .btn-icon:hover {
+         background-color: var(--color-secondary);
+         color: var(--color-text);
+      }
 
-       /* Dark mode specifics (CRM) */
-       [data-color-scheme="dark"] .btn--outline {
-         border: 1px solid var(--color-border-secondary);
-       }
-       @font-face {
-         font-family: 'FKGroteskNeue';
-         src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
-           format('woff2');
-       }
+      /* Modal Styles (CRM) */
+      .modal {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         z-index: 10000;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+      /* .modal.hidden se maneja con .hidden */
+      .modal-overlay {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.5);
+         backdrop-filter: blur(4px);
+      }
+      .modal-content {
+         background-color: var(--color-surface);
+         border-radius: var(--radius-lg);
+         box-shadow: var(--shadow-lg);
+         max-width: 500px;
+         width: 90%;
+         max-height: 90vh;
+         overflow-y: auto;
+         position: relative;
+         z-index: 1;
+      }
+      .modal-header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: var(--space-20);
+         border-bottom: 1px solid var(--color-card-border-inner);
+      }
+      .modal-header h2 {
+         margin: 0;
+         font-size: var(--font-size-2xl);
+         font-weight: var(--font-weight-semibold);
+      }
+      .modal-close {
+         background: none;
+         border: none;
+         color: var(--color-text-secondary);
+         font-size: var(--font-size-lg);
+         padding: var(--space-8);
+         border-radius: var(--radius-base);
+         cursor: pointer;
+         transition: all var(--duration-fast) var(--ease-standard);
+      }
+      .modal-close:hover {
+         background-color: var(--color-secondary);
+         color: var(--color-text);
+      }
+      .modal-body { padding: var(--space-20); }
+      .modal-footer {
+         display: flex;
+         gap: var(--space-12);
+         justify-content: flex-end;
+         padding: var(--space-20);
+         border-top: 1px solid var(--color-card-border-inner);
+      }
+      .form-row {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: var(--space-16);
+      }
 
-       /* Sidebar Styles (CRM) */
-       .sidebar {
-           width: 280px;
-           background-color: var(--color-surface);
-           border-right: 1px solid var(--color-border);
-           display: flex;
-           flex-direction: column;
-           transition: width var(--duration-normal) var(--ease-standard);
-           position: fixed;
-           left: 0;
-           top: 0;
-           height: 100vh;
-           z-index: 1000;
-       }
-       .sidebar.collapsed { width: 70px; }
-       .sidebar-header {
-           padding: var(--space-20);
-           border-bottom: 1px solid var(--color-border);
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
-       }
-       .logo {
-           display: flex;
-           align-items: center;
-           gap: var(--space-12);
-           font-weight: var(--font-weight-bold);
-           font-size: var(--font-size-xl);
-           color: var(--color-primary);
-       }
-       .sidebar.collapsed .logo-text { display: none; }
-       .sidebar-toggle {
-           background: none;
-           border: none;
-           color: var(--color-text-secondary);
-           cursor: pointer;
-           padding: var(--space-8);
-           border-radius: var(--radius-base);
-           transition: background-color var(--duration-fast) var(--ease-standard);
-       }
-       .sidebar-toggle:hover { background-color: var(--color-secondary); }
-       .sidebar-menu {
-           flex-grow: 1;
-           overflow-y: auto;
-           padding: var(--space-16);
-       }
-       .sidebar-menu ul {
-           list-style: none;
-           padding: 0;
-           margin: 0;
-           display: flex;
-           flex-direction: column;
-           gap: var(--space-4);
-       }
-       .menu-item {
-           display: flex;
-           align-items: center;
-           gap: var(--space-12);
-           padding: var(--space-12) var(--space-16);
-           border-radius: var(--radius-base);
-           text-decoration: none;
-           color: var(--color-text-secondary);
-           transition: all var(--duration-fast) var(--ease-standard);
-           font-weight: var(--font-weight-medium);
-       }
-       .menu-item:hover {
-           background-color: var(--color-secondary);
-           color: var(--color-text);
-       }
-       .menu-item.active {
-           background-color: var(--color-primary);
-           color: var(--color-btn-primary-text);
-       }
-       .menu-item i { width: 20px; text-align: center; }
-       .sidebar.collapsed .menu-item span { display: none; }
-       
-       /* Sidebar Footer (Perfil y Logout) */
-       .sidebar-footer {
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
-           padding: var(--space-16);
-           border-top: 1px solid var(--color-border);
-       }
-       .user-profile {
-           display: flex;
-           align-items: center;
-           gap: var(--space-12);
-           flex-grow: 1; 
-           min-width: 0; 
-       }
-       .user-avatar {
-           width: 40px;
-           height: 40px;
-           border-radius: var(--radius-full);
-           background-color: var(--color-primary);
-           color: var(--color-btn-primary-text);
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           font-weight: var(--font-weight-bold);
-           font-size: var(--font-size-sm);
-           flex-shrink: 0; 
-       }
-       .user-info { 
-           display: flex; 
-           flex-direction: column; 
-           white-space: nowrap;
-           overflow: hidden;
-           text-overflow: ellipsis;
-       }
-       .user-name {
-           font-weight: var(--font-weight-medium);
-           font-size: var(--font-size-sm);
-       }
-       .user-role {
-           font-size: var(--font-size-xs);
-           color: var(--color-text-secondary);
-       }
-       .sidebar.collapsed .user-info { display: none; }
-       
-       .btn-logout {
-           background: none;
-           border: none;
-           color: var(--color-text-secondary);
-           font-size: var(--font-size-lg);
-           cursor: pointer;
-           padding: var(--space-8);
-           border-radius: var(--radius-base);
-           transition: all var(--duration-fast) var(--ease-standard);
-           flex-shrink: 0; 
-           margin-left: var(--space-8);
-       }
-       .btn-logout:hover {
-           background-color: var(--color-secondary);
-           color: var(--color-text);
-       }
+      /* Toast Notifications (CRM) */
+      .toast-container {
+         position: fixed;
+         top: var(--space-20);
+         right: var(--space-20);
+         z-index: 10001;
+         display: flex;
+         flex-direction: column;
+         gap: var(--space-8);
+      }
+      .toast {
+         background-color: var(--color-surface);
+         border: 1px solid var(--color-card-border);
+         border-radius: var(--radius-base);
+         padding: var(--space-12) var(--space-16);
+         box-shadow: var(--shadow-md);
+         display: flex;
+         align-items: center;
+         gap: var(--space-12);
+         min-width: 300px;
+         animation: slideInRight var(--duration-normal) var(--ease-standard);
+      }
+      .toast.success { border-left: 4px solid var(--color-success); }
+      .toast.error { border-left: 4px solid var(--color-error); }
+      .toast.info { border-left: 4px solid var(--color-info); }
+      .toast-icon { font-size: var(--font-size-lg); }
+      .toast.success .toast-icon { color: var(--color-success); }
+      .toast.error .toast-icon { color: var(--color-error); }
+      .toast.info .toast-icon { color: var(--color-info); }
+      .toast-content { flex: 1; }
+      .toast-title {
+         font-weight: var(--font-weight-semibold);
+         margin: 0 0 var(--space-2) 0;
+         font-size: var(--font-size-sm);
+      }
+      .toast-message {
+         margin: 0;
+         font-size: var(--font-size-xs);
+         color: var(--color-text-secondary);
+      }
+      .toast-close {
+         background: none;
+         border: none;
+         color: var(--color-text-secondary);
+         cursor: pointer;
+         padding: var(--space-2);
+      }
+      @keyframes slideInRight {
+         from { transform: translateX(100%); opacity: 0; }
+         to { transform: translateX(0); opacity: 1; }
+      }
 
-       .sidebar.collapsed .sidebar-footer {
-           flex-direction: column;
-           align-items: center;
-           gap: var(--space-12);
-       }
-       .sidebar.collapsed .user-profile {
-           flex-grow: 0;
-       }
-       .sidebar.collapsed .btn-logout {
-           margin: 0;
-           width: 100%;
-       }
+      /* Drag and Drop (CRM) */
+      .pipeline-column.drag-over {
+         border: 2px dashed var(--color-primary);
+         background-color: rgba(var(--color-teal-500-rgb), 0.05);
+      }
+      .deal-card.placeholder {
+         border: 2px dashed var(--color-border);
+         background-color: transparent;
+         height: 100px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         color: var(--color-text-secondary);
+         font-style: italic;
+      }
 
-       /* Main Content Styles (CRM) */
-       .main-content {
-           flex: 1;
-           margin-left: 280px;
-           transition: margin-left var(--duration-normal) var(--ease-standard);
-           display: flex;
-           flex-direction: column;
-           overflow-x: hidden;
-           max-width: 100%;
-       }
-       .sidebar.collapsed + .main-content { margin-left: 70px; }
+      /* Responsive Design (CRM) */
+      @media (max-width: 1024px) {
+         .dashboard-grid {
+             grid-template-columns: 1fr;
+             gap: var(--space-24);
+         }
+         .chart-card { height: 350px; }
+      }
+      @media (max-width: 768px) {
+         .sidebar { width: 70px; }
+         .sidebar .menu-item span { display: none; }
+         
+         /* --- INICIO DE LA CORRECCIÓN --- */
+         /* Ocultamos el texto del logo y la info de usuario en la vista móvil (70px) */
+         /* para que coincida con el estado colapsado. */
+         .sidebar .logo-text { display: none; }
+         .sidebar .user-info { display: none; }
+         /* --- FIN DE LA CORRECCIÓN --- */
+         
+         .main-content { margin-left: 70px; }
+         .header {
+             padding: var(--space-12) var(--space-16);
+             flex-direction: column;
+             gap: var(--space-12);
+             align-items: stretch;
+         }
+         .header-left { width: 100%; text-align: center; }
+         .breadcrumb { justify-content: center; }
+         .header-right {
+             width: 100%;
+             justify-content: space-between;
+         }
+         .search-box { flex-grow: 1; }
+         .search-box input { width: 100%; }
+         #addNewBtn span { display: none; }
+         #addNewBtn { padding: var(--space-8) var(--space-12); }
+         .metrics-grid { grid-template-columns: 1fr; }
+         .pipeline-board {
+             flex-direction: column;
+             overflow-x: hidden;
+             gap: var(--space-16);
+         }
+         .pipeline-column { min-width: 100%; }
+         .contacts-grid,
+         .companies-grid { grid-template-columns: 1fr; }
+         .form-row { grid-template-columns: 1fr; }
+         .modal-content {
+             margin: var(--space-16);
+             width: calc(100% - 32px);
+         }
+         .view-filters,
+         .pipeline-filters {
+             flex-direction: column;
+             align-items: stretch;
+         }
+         .view-filters .form-control,
+         .pipeline-filters .form-control {
+             width: 100%;
+             min-width: unset;
+         }
+         .deals-table-container { overflow-x: hidden; }
+         .deals-table { border: none; }
+         .deals-table thead { display: none; }
+         .deals-table tr {
+             display: block;
+             margin-bottom: var(--space-16);
+             border: 1px solid var(--color-border);
+             border-radius: var(--radius-base);
+             padding: var(--space-8);
+         }
+         .deals-table td {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             padding: var(--space-8) 0;
+             border-bottom: 1px solid var(--color-border);
+             text-align: right;
+         }
+         .deals-table td:last-child { border-bottom: none; }
+         .deals-table td::before {
+             content: attr(data-label);
+             font-weight: var(--font-weight-medium);
+             text-align: left;
+             padding-right: var(--space-16);
+         }
+         .deals-table td .deal-actions { justify-content: flex-end; }
+      }
+      @media (max-width: 480px) {
+         .view { padding: var(--space-16); }
+         .metrics-grid { gap: var(--space-12); }
+         .metric-card { padding: var(--space-16); }
+         .pipeline-column { min-width: 100%; }
+      }
 
-       /* Header Styles (CRM) */
-       .header {
-           background-color: var(--color-surface);
-           border-bottom: 1px solid var(--color-border);
-           padding: var(--space-16) var(--space-24);
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           position: sticky;
-           top: 0;
-           z-index: 100;
-       }
-       .header-left h1 {
-           margin: 0 0 var(--space-4) 0;
-           font-size: var(--font-size-3xl);
-           font-weight: var(--font-weight-bold);
-       }
-       .breadcrumb {
-           display: flex;
-           align-items: center;
-           gap: var(--space-8);
-           font-size: var(--font-size-sm);
-           color: var(--color-text-secondary);
-       }
-       .header-right {
-           display: flex;
-           align-items: center;
-           gap: var(--space-16);
-       }
-       .search-box { position: relative; }
-       .search-box input {
-           padding: var(--space-8) var(--space-12) var(--space-8) var(--space-32);
-           border: 1px solid var(--color-border);
-           border-radius: var(--radius-base);
-           background-color: var(--color-background);
-           color: var(--color-text);
-           font-size: var(--font-size-sm);
-           width: 250px;
-       }
-       .search-box i {
-           position: absolute;
-           left: var(--space-12);
-           top: 50%;
-           transform: translateY(-50%);
-           color: var(--color-text-secondary);
-       }
-       .theme-toggle {
-           background: none;
-           border: 1px solid var(--color-border);
-           border-radius: var(--radius-base);
-           padding: var(--space-8);
-           cursor: pointer;
-           color: var(--color-text-secondary);
-           transition: all var(--duration-fast) var(--ease-standard);
-       }
-       .theme-toggle:hover {
-           background-color: var(--color-secondary);
-           color: var(--color-text);
-       }
+      /* Loading States (CRM) */
+      .loading {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         padding: var(--space-32);
+      }
+      .spinner {
+         width: 32px;
+         height: 32px;
+         border: 3px solid var(--color-secondary);
+         border-top: 3px solid var(--color-primary);
+         border-radius: var(--radius-full);
+         animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+         0% { transform: rotate(0deg); }
+         100% { transform: rotate(360deg); }
+      }
 
-       /* Views (CRM) */
-       .view {
-           flex: 1;
-           padding: var(--space-24);
-           display: none;
-       }
-       .view.active { display: block; }
-
-       /* Metrics Cards (CRM) */
-       .metrics-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-           gap: var(--space-20);
-           margin-bottom: var(--space-32);
-       }
-       .metric-card {
-           background-color: var(--color-surface);
-           border: 1px solid var(--color-card-border);
-           border-radius: var(--radius-lg);
-           padding: var(--space-20);
-           display: flex;
-           align-items: center;
-           gap: var(--space-16);
-           transition: box-shadow var(--duration-normal) var(--ease-standard);
-       }
-       .metric-card:hover { box-shadow: var(--shadow-md); }
-       .metric-icon {
-           width: 60px;
-           height: 60px;
-           border-radius: var(--radius-lg);
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           font-size: var(--font-size-xl);
-           color: white;
-       }
-       .metric-icon.sales { background: linear-gradient(135deg, var(--color-teal-500), var(--color-teal-600)); }
-       .metric-icon.deals { background: linear-gradient(135deg, #3B82F6, #2563EB); }
-       .metric-icon.contacts { background: linear-gradient(135deg, #10B981, #059669); }
-       .metric-icon.conversion { background: linear-gradient(135deg, #F59E0B, #D97706); }
-       .metric-content h3 {
-           font-size: var(--font-size-3xl);
-           font-weight: var(--font-weight-bold);
-           margin: 0 0 var(--space-4) 0;
-       }
-       .metric-content p {
-           color: var(--color-text-secondary);
-           margin: 0 0 var(--space-8) 0;
-           font-size: var(--font-size-sm);
-       }
-       .metric-change {
-           font-size: var(--font-size-sm);
-           font-weight: var(--font-weight-medium);
-           padding: var(--space-2) var(--space-8);
-           border-radius: var(--radius-full);
-       }
-       .metric-change.positive {
-           background-color: rgba(var(--color-success-rgb), 0.1);
-           color: var(--color-success);
-       }
-       .metric-change.negative {
-           background-color: rgba(var(--color-error-rgb), 0.1);
-           color: var(--color-error);
-       }
-
-       /* Dashboard Grid (CRM) */
-       .dashboard-grid {
-           display: grid;
-           grid-template-columns: 2fr 1fr;
-           gap: var(--space-24);
-       }
-       .chart-card { height: 400px; }
-       .chart-container { width: 100%; height: 100%; }
-       .activity-feed {
-           display: flex;
-           flex-direction: column;
-           gap: var(--space-16);
-           max-height: 300px;
-           overflow-y: auto;
-       }
-       .activity-item {
-           display: flex;
-           gap: var(--space-12);
-           padding: var(--space-12);
-           border-radius: var(--radius-base);
-           background-color: var(--color-background);
-       }
-       .activity-avatar {
-           width: 32px;
-           height: 32px;
-           border-radius: var(--radius-full);
-           background-color: var(--color-primary);
-           color: var(--color-btn-primary-text);
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           font-size: var(--font-size-xs);
-           font-weight: var(--font-weight-bold);
-           flex-shrink: 0;
-       }
-       .activity-content { flex: 1; }
-       .activity-text {
-           font-size: var(--font-size-sm);
-           margin: 0 0 var(--space-4) 0;
-       }
-       .activity-time {
-           font-size: var(--font-size-xs);
-           color: var(--color-text-secondary);
-       }
-
-       /* Pipeline Board (CRM) */
-       .pipeline-header { margin-bottom: var(--space-24); }
-       .pipeline-filters {
-           display: flex;
-           gap: var(--space-16);
-           align-items: center;
-       }
-       .pipeline-filters .form-control {
-           width: auto;
-           min-width: 200px;
-       }
-       .pipeline-board {
-           display: flex;
-           gap: var(--space-20);
-           overflow-x: auto;
-           padding-bottom: var(--space-16);
-       }
-       .pipeline-column {
-           min-width: 300px;
-           background-color: var(--color-surface);
-           border-radius: var(--radius-lg);
-           border: 1px solid var(--color-card-border);
-           flex-shrink: 0;
-       }
-       .pipeline-column-header {
-           padding: var(--space-16);
-           border-bottom: 1px solid var(--color-card-border-inner);
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-       }
-       .column-title {
-           font-weight: var(--font-weight-semibold);
-           display: flex;
-           align-items: center;
-           gap: var(--space-8);
-       }
-       .column-indicator {
-           width: 12px;
-           height: 12px;
-           border-radius: var(--radius-full);
-       }
-       .column-count {
-           background-color: var(--color-secondary);
-           color: var(--color-text);
-           border-radius: var(--radius-full);
-           padding: var(--space-2) var(--space-8);
-           font-size: var(--font-size-xs);
-           font-weight: var(--font-weight-medium);
-       }
-       .pipeline-column-body {
-           padding: var(--space-16);
-           min-height: 400px;
-           display: flex;
-           flex-direction: column;
-           gap: var(--space-12);
-       }
-       .deal-card {
-           background-color: var(--color-background);
-           border: 1px solid var(--color-card-border);
-           border-radius: var(--radius-base);
-           padding: var(--space-16);
-           cursor: move;
-           transition: all var(--duration-fast) var(--ease-standard);
-       }
-       .deal-card:hover {
-           box-shadow: var(--shadow-md);
-           transform: translateY(-2px);
-       }
-       .deal-card.dragging { opacity: 0.5; transform: rotate(5deg); }
-       .deal-title {
-           font-weight: var(--font-weight-semibold);
-           margin: 0 0 var(--space-8) 0;
-           font-size: var(--font-size-base);
-       }
-       .deal-amount {
-           font-size: var(--font-size-lg);
-           font-weight: var(--font-weight-bold);
-           color: var(--color-primary);
-           margin: 0 0 var(--space-8) 0;
-       }
-       .deal-meta {
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           font-size: var(--font-size-sm);
-           color: var(--color-text-secondary);
-       }
-       .deal-contact {
-           display: flex;
-           align-items: center;
-           gap: var(--space-6);
-       }
-       .deal-probability {
-           background-color: var(--color-secondary);
-           padding: var(--space-2) var(--space-6);
-           border-radius: var(--radius-base);
-           font-size: var(--font-size-xs);
-       }
-
-       /* Contacts/Companies/Deals Grids (CRM) */
-       .view-header { margin-bottom: var(--space-24); }
-       .view-filters {
-           display: flex;
-           gap: var(--space-16);
-           align-items: center;
-       }
-       .view-filters .form-control {
-           width: auto;
-           min-width: 200px;
-       }
-       .contacts-grid,
-       .companies-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-           gap: var(--space-20);
-       }
-       .contact-card,
-       .company-card {
-           background-color: var(--color-surface);
-           border: 1px solid var(--color-card-border);
-           border-radius: var(--radius-lg);
-           padding: var(--space-20);
-           transition: all var(--duration-normal) var(--ease-standard);
-           cursor: pointer;
-       }
-       .contact-card:hover,
-       .company-card:hover {
-           box-shadow: var(--shadow-md);
-           transform: translateY(-2px);
-       }
-       .contact-header,
-       .company-header {
-           display: flex;
-           align-items: center;
-           gap: var(--space-12);
-           margin-bottom: var(--space-16);
-       }
-       .contact-avatar,
-       .company-avatar {
-           width: 50px;
-           height: 50px;
-           border-radius: var(--radius-full);
-           background-color: var(--color-primary);
-           color: var(--color-btn-primary-text);
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           font-weight: var(--font-weight-bold);
-           font-size: var(--font-size-lg);
-       }
-       .contact-info h3,
-       .company-info h3 {
-           margin: 0 0 var(--space-4) 0;
-           font-size: var(--font-size-lg);
-           font-weight: var(--font-weight-semibold);
-       }
-       .contact-email,
-       .company-industry {
-           color: var(--color-text-secondary);
-           font-size: var(--font-size-sm);
-       }
-       .contact-details,
-       .company-details {
-           display: flex;
-           flex-direction: column;
-           gap: var(--space-8);
-       }
-       .contact-detail,
-       .company-detail {
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           font-size: var(--font-size-sm);
-       }
-       .contact-tags {
-           display: flex;
-           flex-wrap: wrap;
-           gap: var(--space-6);
-           margin-top: var(--space-12);
-       }
-       .tag {
-           background-color: var(--color-secondary);
-           color: var(--color-text);
-           padding: var(--space-2) var(--space-8);
-           border-radius: var(--radius-full);
-           font-size: var(--font-size-xs);
-           font-weight: var(--font-weight-medium);
-       }
-
-       /* Deals Table (CRM) */
-       .deals-table-container {
-           background-color: var(--color-surface);
-           border-radius: var(--radius-lg);
-           border: 1px solid var(--color-card-border);
-           overflow: hidden;
-       }
-       .deals-table {
-           width: 100%;
-           border-collapse: collapse;
-       }
-       .deals-table th {
-           background-color: var(--color-background);
-           padding: var(--space-16);
-           text-align: left;
-           font-weight: var(--font-weight-semibold);
-           font-size: var(--font-size-sm);
-           color: var(--color-text-secondary);
-           border-bottom: 1px solid var(--color-card-border-inner);
-       }
-       .deals-table td {
-           padding: var(--space-16);
-           border-bottom: 1px solid var(--color-card-border-inner);
-           font-size: var(--font-size-sm);
-       }
-       .deals-table tbody tr:hover { background-color: var(--color-background); }
-       .stage-badge {
-           display: inline-flex;
-           align-items: center;
-           gap: var(--space-6);
-           padding: var(--space-4) var(--space-8);
-           border-radius: var(--radius-base);
-           font-size: var(--font-size-xs);
-           font-weight: var(--font-weight-medium);
-       }
-       .stage-indicator {
-           width: 8px;
-           height: 8px;
-           border-radius: var(--radius-full);
-       }
-       .probability-bar {
-           width: 60px;
-           height: 6px;
-           background-color: var(--color-secondary);
-           border-radius: var(--radius-full);
-           overflow: hidden;
-       }
-       .probability-fill {
-           height: 100%;
-           background-color: var(--color-primary);
-           border-radius: var(--radius-full);
-           transition: width var(--duration-normal) var(--ease-standard);
-       }
-       .deal-actions { display: flex; gap: var(--space-8); }
-       .btn-icon {
-           background: none;
-           border: none;
-           color: var(--color-text-secondary);
-           padding: var(--space-4);
-           border-radius: var(--radius-sm);
-           cursor: pointer;
-           transition: all var(--duration-fast) var(--ease-standard);
-       }
-       .btn-icon:hover {
-           background-color: var(--color-secondary);
-           color: var(--color-text);
-       }
-
-       /* Modal Styles (CRM) */
-       .modal {
-           position: fixed;
-           top: 0;
-           left: 0;
-           width: 100%;
-           height: 100%;
-           z-index: 10000;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-       }
-       /* .modal.hidden se maneja con .hidden */
-       .modal-overlay {
-           position: absolute;
-           top: 0;
-           left: 0;
-           width: 100%;
-           height: 100%;
-           background-color: rgba(0, 0, 0, 0.5);
-           backdrop-filter: blur(4px);
-       }
-       .modal-content {
-           background-color: var(--color-surface);
-           border-radius: var(--radius-lg);
-           box-shadow: var(--shadow-lg);
-           max-width: 500px;
-           width: 90%;
-           max-height: 90vh;
-           overflow-y: auto;
-           position: relative;
-           z-index: 1;
-       }
-       .modal-header {
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           padding: var(--space-20);
-           border-bottom: 1px solid var(--color-card-border-inner);
-       }
-       .modal-header h2 {
-           margin: 0;
-           font-size: var(--font-size-2xl);
-           font-weight: var(--font-weight-semibold);
-       }
-       .modal-close {
-           background: none;
-           border: none;
-           color: var(--color-text-secondary);
-           font-size: var(--font-size-lg);
-           padding: var(--space-8);
-           border-radius: var(--radius-base);
-           cursor: pointer;
-           transition: all var(--duration-fast) var(--ease-standard);
-       }
-       .modal-close:hover {
-           background-color: var(--color-secondary);
-           color: var(--color-text);
-       }
-       .modal-body { padding: var(--space-20); }
-       .modal-footer {
-           display: flex;
-           gap: var(--space-12);
-           justify-content: flex-end;
-           padding: var(--space-20);
-           border-top: 1px solid var(--color-card-border-inner);
-       }
-       .form-row {
-           display: grid;
-           grid-template-columns: 1fr 1fr;
-           gap: var(--space-16);
-       }
-
-       /* Toast Notifications (CRM) */
-       .toast-container {
-           position: fixed;
-           top: var(--space-20);
-           right: var(--space-20);
-           z-index: 10001;
-           display: flex;
-           flex-direction: column;
-           gap: var(--space-8);
-       }
-       .toast {
-           background-color: var(--color-surface);
-           border: 1px solid var(--color-card-border);
-           border-radius: var(--radius-base);
-           padding: var(--space-12) var(--space-16);
-           box-shadow: var(--shadow-md);
-           display: flex;
-           align-items: center;
-           gap: var(--space-12);
-           min-width: 300px;
-           animation: slideInRight var(--duration-normal) var(--ease-standard);
-       }
-       .toast.success { border-left: 4px solid var(--color-success); }
-       .toast.error { border-left: 4px solid var(--color-error); }
-       .toast.info { border-left: 4px solid var(--color-info); }
-       .toast-icon { font-size: var(--font-size-lg); }
-       .toast.success .toast-icon { color: var(--color-success); }
-       .toast.error .toast-icon { color: var(--color-error); }
-       .toast.info .toast-icon { color: var(--color-info); }
-       .toast-content { flex: 1; }
-       .toast-title {
-           font-weight: var(--font-weight-semibold);
-           margin: 0 0 var(--space-2) 0;
-           font-size: var(--font-size-sm);
-       }
-       .toast-message {
-           margin: 0;
-           font-size: var(--font-size-xs);
-           color: var(--color-text-secondary);
-       }
-       .toast-close {
-           background: none;
-           border: none;
-           color: var(--color-text-secondary);
-           cursor: pointer;
-           padding: var(--space-2);
-       }
-       @keyframes slideInRight {
-           from { transform: translateX(100%); opacity: 0; }
-           to { transform: translateX(0); opacity: 1; }
-       }
-
-       /* Drag and Drop (CRM) */
-       .pipeline-column.drag-over {
-           border: 2px dashed var(--color-primary);
-           background-color: rgba(var(--color-teal-500-rgb), 0.05);
-       }
-       .deal-card.placeholder {
-           border: 2px dashed var(--color-border);
-           background-color: transparent;
-           height: 100px;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           color: var(--color-text-secondary);
-           font-style: italic;
-       }
-
-       /* Responsive Design (CRM) */
-       @media (max-width: 1024px) {
-           .dashboard-grid {
-               grid-template-columns: 1fr;
-               gap: var(--space-24);
-           }
-           .chart-card { height: 350px; }
-       }
-       @media (max-width: 768px) {
-           .sidebar { width: 70px; }
-           .sidebar .menu-item span { display: none; }
-           .main-content { margin-left: 70px; }
-           .header {
-               padding: var(--space-12) var(--space-16);
-               flex-direction: column;
-               gap: var(--space-12);
-               align-items: stretch;
-           }
-           .header-left { width: 100%; text-align: center; }
-           .breadcrumb { justify-content: center; }
-           .header-right {
-               width: 100%;
-               justify-content: space-between;
-           }
-           .search-box { flex-grow: 1; }
-           .search-box input { width: 100%; }
-           #addNewBtn span { display: none; }
-           #addNewBtn { padding: var(--space-8) var(--space-12); }
-           .metrics-grid { grid-template-columns: 1fr; }
-           .pipeline-board {
-               flex-direction: column;
-               overflow-x: hidden;
-               gap: var(--space-16);
-           }
-           .pipeline-column { min-width: 100%; }
-           .contacts-grid,
-           .companies-grid { grid-template-columns: 1fr; }
-           .form-row { grid-template-columns: 1fr; }
-           .modal-content {
-               margin: var(--space-16);
-               width: calc(100% - 32px);
-           }
-           .view-filters,
-           .pipeline-filters {
-               flex-direction: column;
-               align-items: stretch;
-           }
-           .view-filters .form-control,
-           .pipeline-filters .form-control {
-               width: 100%;
-               min-width: unset;
-           }
-           .deals-table-container { overflow-x: hidden; }
-           .deals-table { border: none; }
-           .deals-table thead { display: none; }
-           .deals-table tr {
-               display: block;
-               margin-bottom: var(--space-16);
-               border: 1px solid var(--color-border);
-               border-radius: var(--radius-base);
-               padding: var(--space-8);
-           }
-           .deals-table td {
-               display: flex;
-               justify-content: space-between;
-               align-items: center;
-               padding: var(--space-8) 0;
-               border-bottom: 1px solid var(--color-border);
-               text-align: right;
-           }
-           .deals-table td:last-child { border-bottom: none; }
-           .deals-table td::before {
-               content: attr(data-label);
-               font-weight: var(--font-weight-medium);
-               text-align: left;
-               padding-right: var(--space-16);
-           }
-           .deals-table td .deal-actions { justify-content: flex-end; }
-       }
-       @media (max-width: 480px) {
-           .view { padding: var(--space-16); }
-           .metrics-grid { gap: var(--space-12); }
-           .metric-card { padding: var(--space-16); }
-           .pipeline-column { min-width: 100%; }
-       }
-
-       /* Loading States (CRM) */
-       .loading {
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           padding: var(--space-32);
-       }
-       .spinner {
-           width: 32px;
-           height: 32px;
-           border: 3px solid var(--color-secondary);
-           border-top: 3px solid var(--color-primary);
-           border-radius: var(--radius-full);
-           animation: spin 1s linear infinite;
-       }
-       @keyframes spin {
-           0% { transform: rotate(0deg); }
-           100% { transform: rotate(360deg); }
-       }
-
-       /* Empty States (CRM) */
-       .empty-state {
-           text-align: center;
-           padding: var(--space-32);
-           color: var(--color-text-secondary);
-       }
-       .empty-state i {
-           font-size: var(--font-size-4xl);
-           margin-bottom: var(--space-16);
-           opacity: 0.5;
-       }
-       .empty-state h3 {
-           margin: 0 0 var(--space-8) 0;
-           font-size: var(--font-size-xl);
-           color: var(--color-text);
-       }
-       .empty-state p {
-           margin: 0;
-           font-size: var(--font-size-base);
-       }
-       /* FIN: Estilos del CRM */
+      /* Empty States (CRM) */
+      .empty-state {
+         text-align: center;
+         padding: var(--space-32);
+         color: var(--color-text-secondary);
+      }
+      .empty-state i {
+         font-size: var(--font-size-4xl);
+         margin-bottom: var(--space-16);
+         opacity: 0.5;
+      }
+      .empty-state h3 {
+         margin: 0 0 var(--space-8) 0;
+         font-size: var(--font-size-xl);
+         color: var(--color-text);
+      }
+      .empty-state p {
+         margin: 0;
+         font-size: var(--font-size-base);
+      }
+      /* FIN: Estilos del CRM */
 
 
-       /* INICIO: Estilos del Login (login.html) */
-       
-       /* Contenedor principal del formulario (Login) */
-       .form-container {
-           width: 100%;
-           max-width: 400px;
-           border-radius: 0.75rem;
-           background-color: #ffffff;
-           padding: 2rem;
-           color: #1c1e21;
-           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-           box-sizing: border-box;
-           transition: all 0.3s ease;
-       }
+      /* INICIO: Estilos del Login (login.html) */
+      
+      /* Contenedor principal del formulario (Login) */
+      .form-container {
+         width: 100%;
+         max-width: 400px;
+         border-radius: 0.75rem;
+         background-color: #ffffff;
+         padding: 2rem;
+         color: #1c1e21;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+         box-sizing: border-box;
+         transition: all 0.3s ease;
+      }
 
-       /* Estilo para el logo (Login) */
-       .form-logo {
-           display: block;
-           margin: 0 auto 1.5rem auto;
-           height: 70px;
-           width: auto;
-       }
+      /* Estilo para el logo (Login) */
+      .form-logo {
+         display: block;
+         margin: 0 auto 1.5rem auto;
+         height: 70px;
+         width: auto;
+      }
 
-       /* Título principal (Login) */
-       #authWrapper .title {
-           text-align: center;
-           font-size: 1.5rem;
-           line-height: 2rem;
-           font-weight: 600;
-           margin-bottom: 1.5rem;
-       }
-       
-       /* Subtítulo (Login) */
-       #authWrapper .subtitle {
-           text-align: center;
-           color: #606770;
-           margin-bottom: 1.5rem;
-           font-size: 0.95rem;
-           margin-top: 0; /* Reseteo */
-       }
-       
-       #authWrapper .form { margin-top: 1rem; }
-       
-       #authWrapper .input-group { margin-bottom: 1.25rem; }
+      /* Título principal (Login) */
+      #authWrapper .title {
+         text-align: center;
+         font-size: 1.5rem;
+         line-height: 2rem;
+         font-weight: 600;
+         margin-bottom: 1.5rem;
+      }
+      
+      /* Subtítulo (Login) */
+      #authWrapper .subtitle {
+         text-align: center;
+         color: #606770;
+         margin-bottom: 1.5rem;
+         font-size: 0.95rem;
+         margin-top: 0; /* Reseteo */
+      }
+      
+      #authWrapper .form { margin-top: 1rem; }
+      
+      #authWrapper .input-group { margin-bottom: 1.25rem; }
 
-       #authWrapper .input-group label {
-           display: block;
-           color: #333333;
-           margin-bottom: 8px;
-           font-weight: 500;
-       }
+      #authWrapper .input-group label {
+         display: block;
+         color: #333333;
+         margin-bottom: 8px;
+         font-weight: 500;
+      }
 
-       /* Estilo de input específico para el login */
-       #authWrapper .input-group input {
-           width: 100%;
-           border-radius: 0.375rem;
-           border: 1px solid #dddfe2;
-           outline: 0;
-           background-color: #ffffff;
-           padding: 0.85rem 1rem;
-           color: #1c1e21;
-           box-sizing: border-box;
-           font-size: 1rem;
-           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-       }
+      /* Estilo de input específico para el login */
+      #authWrapper .input-group input {
+         width: 100%;
+         border-radius: 0.375rem;
+         border: 1px solid #dddfe2;
+         outline: 0;
+         background-color: #ffffff;
+         padding: 0.85rem 1rem;
+         color: #1c1e21;
+         box-sizing: border-box;
+         font-size: 1rem;
+         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
 
-       /* Espacio para el icono de ver/ocultar contraseña */
-       #login-password {
-           padding-right: 3rem; 
-       }
+      /* Espacio para el icono de ver/ocultar contraseña */
+      #login-password {
+         padding-right: 3rem; 
+      }
 
-       #authWrapper .input-group input::placeholder { color: #90949c; }
+      #authWrapper .input-group input::placeholder { color: #90949c; }
 
-       #authWrapper .input-group input:focus {
-           border-color: #1877f2;
-           box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
-       }
+      #authWrapper .input-group input:focus {
+         border-color: #1877f2;
+         box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+      }
 
-       /* Validador de contraseña (Login) */
-       #password-requirements {
-           font-size: 0.8rem;
-           margin-top: 0.5rem;
-           color: #606770;
-           line-height: 1.4;
-       }
-       #password-requirements span { transition: color 0.3s ease; }
-       .invalid { color: #fa383e; }
-       .valid { color: #00a400; }
-       
-       /* Botón .sign (Login) */
-       .sign {
-           display: block;
-           width: 100%;
-           background-color: #1c2b4c;
-           padding: 0.85rem;
-           text-align: center;
-           color: #ffffff;
-           border: none;
-           border-radius: 0.375rem;
-           font-weight: 600;
-           font-size: 1.05rem;
-           cursor: pointer;
-           transition: background-color 0.2s ease-in-out;
-           margin-top: 1.5rem;
-       }
-       .sign:hover { background-color: #2a3f6d; }
-       .sign:disabled { background-color: #a0aec0; cursor: not-allowed; }
-       
-       #authWrapper .actions {
-           text-align: center;
-           font-size: 0.9rem;
-           line-height: 1rem;
-           color: #606770;
-           margin-top: 1.5rem;
-       }
-       #authWrapper .actions a {
-           color: #1877f2;
-           text-decoration: none;
-           font-weight: 500;
-           cursor: pointer;
-       }
-       #authWrapper .actions a:hover { text-decoration: underline; }
-       #authWrapper .actions p { margin-bottom: 0.5rem; }
-       
-       /* Mensajes de error/éxito (Login) */
-       .message {
-           text-align: center;
-           padding: 1rem;
-           margin-bottom: 1rem;
-           border-radius: 0.375rem;
-           font-size: 0.95rem;
-       }
-       .message-error {
-           background-color: #f8d7da;
-           color: #721c24;
-           border: 1px solid #f5c6cb;
-       }
-       .message-success {
-           background-color: #d4edda;
-           color: #155724;
-           border: 1px solid #c3e6cb;
-       }
+      /* Validador de contraseña (Login) */
+      #password-requirements {
+         font-size: 0.8rem;
+         margin-top: 0.5rem;
+         color: #606770;
+         line-height: 1.4;
+      }
+      #password-requirements span { transition: color 0.3s ease; }
+      .invalid { color: #fa383e; }
+      .valid { color: #00a400; }
+      
+      /* Botón .sign (Login) */
+      .sign {
+         display: block;
+         width: 100%;
+         background-color: #1c2b4c;
+         padding: 0.85rem;
+         text-align: center;
+         color: #ffffff;
+         border: none;
+         border-radius: 0.375rem;
+         font-weight: 600;
+         font-size: 1.05rem;
+         cursor: pointer;
+         transition: background-color 0.2s ease-in-out;
+         margin-top: 1.5rem;
+      }
+      .sign:hover { background-color: #2a3f6d; }
+      .sign:disabled { background-color: #a0aec0; cursor: not-allowed; }
+      
+      #authWrapper .actions {
+         text-align: center;
+         font-size: 0.9rem;
+         line-height: 1rem;
+         color: #606770;
+         margin-top: 1.5rem;
+      }
+      #authWrapper .actions a {
+         color: #1877f2;
+         text-decoration: none;
+         font-weight: 500;
+         cursor: pointer;
+      }
+      #authWrapper .actions a:hover { text-decoration: underline; }
+      #authWrapper .actions p { margin-bottom: 0.5rem; }
+      
+      /* Mensajes de error/éxito (Login) */
+      .message {
+         text-align: center;
+         padding: 1rem;
+         margin-bottom: 1rem;
+         border-radius: 0.375rem;
+         font-size: 0.95rem;
+      }
+      .message-error {
+         background-color: #f8d7da;
+         color: #721c24;
+         border: 1px solid #f5c6cb;
+      }
+      .message-success {
+         background-color: #d4edda;
+         color: #155724;
+         border: 1px solid #c3e6cb;
+      }
 
-       #register-success-view { cursor: pointer; }
+      #register-success-view { cursor: pointer; }
 
-       @media (min-width: 768px) {
-           .form-container {
-               max-width: 440px;
-               padding: 2.5rem;
-           }
-           #authWrapper .title { font-size: 1.75rem; }
-       }
-       /* FIN: Estilos del Login */
+      @media (min-width: 768px) {
+         .form-container {
+             max-width: 440px;
+             padding: 2.5rem;
+         }
+         #authWrapper .title { font-size: 1.75rem; }
+      }
+      /* FIN: Estilos del Login */
     </style>
 </head>
 <body>
@@ -1647,32 +1655,32 @@
                 <div id="register-message" class="message hidden"></div>
                 <form class="form" id="register-form">
                      <div class="input-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                         <label for="nombre">Nombre</label>
+                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                     </div>
-                    <div class="input-group">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
+                     <div class="input-group">
+                         <label for="apellido">Apellido</label>
+                         <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
                     </div>
-                    <div class="input-group">
-                        <label for="cargo">Cargo</label>
-                        <input type="text" id="cargo" name="cargo" placeholder="Ej: CEO, Gerente de Ventas">
+                     <div class="input-group">
+                         <label for="cargo">Cargo</label>
+                         <input type="text" id="cargo" name="cargo" placeholder="Ej: CEO, Gerente de Ventas">
                     </div>
-                    <div class="input-group">
-                        <label for="register-email">Email</label>
-                        <input type="email" id="register-email" name="email" placeholder="Tu email" required>
+                     <div class="input-group">
+                         <label for="register-email">Email</label>
+                         <input type="email" id="register-email" name="email" placeholder="Tu email" required>
                     </div>
-                    <div class="input-group">
-                        <label for="register-password">Contraseña</label>
-                        <input type="password" id="register-password" name="password" placeholder="Crea una contraseña" required>
-                         <p id="password-requirements">
-                            La contraseña debe tener al menos 
-                            <span id="length" class="invalid">8 caracteres,</span> 
-                            <span id="uppercase" class="invalid">una mayúscula,</span> 
-                            <span id="lowercase" class="invalid">una minúscula,</span> 
-                            <span id="number" class="invalid">un número</span> y 
-                            <span id="special" class="invalid">un símbolo.</span>
-                        </p>
+                     <div class="input-group">
+                         <label for="register-password">Contraseña</label>
+                         <input type="password" id="register-password" name="password" placeholder="Crea una contraseña" required>
+                          <p id="password-requirements">
+                             La contraseña debe tener al menos 
+                             <span id="length" class="invalid">8 caracteres,</span> 
+                             <span id="uppercase" class="invalid">una mayúscula,</span> 
+                             <span id="lowercase" class="invalid">una minúscula,</span> 
+                             <span id="number" class="invalid">un número</span> y 
+                             <span id="special" class="invalid">un símbolo.</span>
+                         </p>
                     </div>
                     <button type="submit" class="sign">Registrarse</button>
                 </form>
@@ -1717,101 +1725,101 @@
          
          <nav class="sidebar" id="sidebar">
               <div class="sidebar-header">
-                <div class="logo">
-                    <i class="fas fa-chart-line"></i>
-                    <span class="logo-text">CRM Pro</span>
-                </div>
-                <button class="sidebar-toggle" id="sidebarToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <div class="sidebar-menu">
-                <ul>
-                    <li><a href="#" class="menu-item active" data-view="dashboard"><i class="fas fa-chart-pie"></i><span>Tablero</span></a></li>
-                    <li><a href="#" class="menu-item" data-view="pipeline"><i class="fas fa-columns"></i><span>Embudo de Ventas</span></a></li>
-                    <li><a href="#" class="menu-item" data-view="contacts"><i class="fas fa-users"></i><span>Contactos</span></a></li>
-                    <li><a href="#" class="menu-item" data-view="companies"><i class="fas fa-building"></i><span>Empresas</span></a></li>
-                    <li><a href="#" class="menu-item" data-view="deals"><i class="fas fa-handshake"></i><span>Negocios</span></a></li>
-                </ul>
-            </div>
+                 <div class="logo">
+                     <i class="fas fa-chart-line"></i>
+                     <span class="logo-text">CRM Pro</span>
+                 </div>
+                 <button class="sidebar-toggle" id="sidebarToggle">
+                     <i class="fas fa-bars"></i>
+                 </button>
+             </div>
+             <div class="sidebar-menu">
+                 <ul>
+                     <li><a href="#" class="menu-item active" data-view="dashboard"><i class="fas fa-chart-pie"></i><span>Tablero</span></a></li>
+                     <li><a href="#" class="menu-item" data-view="pipeline"><i class="fas fa-columns"></i><span>Embudo de Ventas</span></a></li>
+                     <li><a href="#" class="menu-item" data-view="contacts"><i class="fas fa-users"></i><span>Contactos</span></a></li>
+                     <li><a href="#" class="menu-item" data-view="companies"><i class="fas fa-building"></i><span>Empresas</span></a></li>
+                     <li><a href="#" class="menu-item" data-view="deals"><i class="fas fa-handshake"></i><span>Negocios</span></a></li>
+                 </ul>
+             </div>
 
-            <div class="sidebar-footer">
-                <div class="user-profile">
-                    <div class="user-avatar">...</div>
-                    <div class="user-info">
-                        <span class="user-name">Cargando...</span>
-                        <span class="user-role">...</span>
-                    </div>
-                </div>
-                <button class="btn-logout" id="logoutButton" title="Cerrar Sesión">
-                    <i class="fas fa-sign-out-alt"></i>
-                </button>
-            </div>
-         </nav>
+             <div class="sidebar-footer">
+                 <div class="user-profile">
+                     <div class="user-avatar">...</div>
+                     <div class="user-info">
+                         <span class="user-name">Cargando...</span>
+                         <span class="user-role">...</span>
+                     </div>
+                 </div>
+                 <button class="btn-logout" id="logoutButton" title="Cerrar Sesión">
+                     <i class="fas fa-sign-out-alt"></i>
+                 </button>
+             </div>
+          </nav>
 
         <main class="main-content" id="mainContent">
-            
+           
             <header class="header">
                  <div class="header-left">
-                    <h1 class="page-title" id="pageTitle">Tablero</h1>
-                    <div class="breadcrumb">
-                        <span>CRM</span> <i class="fas fa-chevron-right"></i> <span id="breadcrumbCurrent">Tablero</span>
-                    </div>
-                </div>
-                <div class="header-right">
-                    <div class="search-box">
-                        <input type="text" placeholder="Buscar..." id="globalSearch"><i class="fas fa-search"></i>
-                    </div>
-                    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
-                    <button class="btn btn--primary" id="addNewBtn"><i class="fas fa-plus"></i><span>Agregar</span></button>
-                </div>
+                     <h1 class="page-title" id="pageTitle">Tablero</h1>
+                     <div class="breadcrumb">
+                         <span>CRM</span> <i class="fas fa-chevron-right"></i> <span id="breadcrumbCurrent">Tablero</span>
+                     </div>
+                 </div>
+                 <div class="header-right">
+                     <div class="search-box">
+                         <input type="text" placeholder="Buscar..." id="globalSearch"><i class="fas fa-search"></i>
+                     </div>
+                     <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                     <button class="btn btn--primary" id="addNewBtn"><i class="fas fa-plus"></i><span>Agregar</span></button>
+                 </div>
             </header>
 
             <div class="view active" id="dashboard-view">
                  <div class="metrics-grid">
-                    <div class="metric-card"><div class="metric-icon sales"><i class="fas fa-dollar-sign"></i></div><div class="metric-content"><h3 id="totalRevenue">$0</h3><p>Ingresos Totales</p></div></div>
-                    <div class="metric-card"><div class="metric-icon deals"><i class="fas fa-handshake"></i></div><div class="metric-content"><h3 id="activeDeals">0</h3><p>Negocios Activos</p></div></div>
-                    <div class="metric-card"><div class="metric-icon contacts"><i class="fas fa-users"></i></div><div class="metric-content"><h3 id="totalContacts">0</h3><p>Contactos</p></div></div>
-                    <div class="metric-card"><div class="metric-icon conversion"><i class="fas fa-chart-line"></i></div><div class="metric-content"><h3 id="conversionRate">0%</h3><p>Tasa de Conversión</p></div></div>
-                </div>
-                <div class="dashboard-grid">
-                    <div class="card chart-card"><div class="card__header"><h3>Embudo por Etapa</h3></div><div class="card__body"><div class="chart-container" style="position: relative; height: 300px;"><canvas id="pipelineChart"></canvas></div></div></div>
-                    <div class="card chart-card"><div class="card__header"><h3>Actividad Reciente</h3></div><div class="card__body"><div class="activity-feed" id="activityFeed"><div class="loading"><div class="spinner"></div></div></div></div></div>
-                </div>
+                     <div class="metric-card"><div class="metric-icon sales"><i class="fas fa-dollar-sign"></i></div><div class="metric-content"><h3 id="totalRevenue">$0</h3><p>Ingresos Totales</p></div></div>
+                     <div class="metric-card"><div class="metric-icon deals"><i class="fas fa-handshake"></i></div><div class="metric-content"><h3 id="activeDeals">0</h3><p>Negocios Activos</p></div></div>
+                     <div class="metric-card"><div class="metric-icon contacts"><i class="fas fa-users"></i></div><div class="metric-content"><h3 id="totalContacts">0</h3><p>Contactos</p></div></div>
+                     <div class="metric-card"><div class="metric-icon conversion"><i class="fas fa-chart-line"></i></div><div class="metric-content"><h3 id="conversionRate">0%</h3><p>Tasa de Conversión</p></div></div>
+                 </div>
+                 <div class="dashboard-grid">
+                     <div class="card chart-card"><div class="card__header"><h3>Embudo por Etapa</h3></div><div class="card__body"><div class="chart-container" style="position: relative; height: 300px;"><canvas id="pipelineChart"></canvas></div></div></div>
+                     <div class="card chart-card"><div class="card__header"><h3>Actividad Reciente</h3></div><div class="card__body"><div class="activity-feed" id="activityFeed"><div class="loading"><div class="spinner"></div></div></div></div></div>
+                 </div>
             </div>
 
             <div class="view" id="pipeline-view">
-                <div class="pipeline-header"><div class="pipeline-filters"><select id="ownerFilter" class="form-control"><option value="">Todos los propietarios</option></select><input type="text" placeholder="Buscar negocios..." id="pipelineSearch" class="form-control"></div></div>
-                <div class="pipeline-board" id="pipelineBoard"><div class="loading"><div class="spinner"></div></div></div>
+                 <div class="pipeline-header"><div class="pipeline-filters"><select id="ownerFilter" class="form-control"><option value="">Todos los propietarios</option></select><input type="text" placeholder="Buscar negocios..." id="pipelineSearch" class="form-control"></div></div>
+                 <div class="pipeline-board" id="pipelineBoard"><div class="loading"><div class="spinner"></div></div></div>
             </div>
 
             <div class="view" id="contacts-view">
-                <div class="view-header"><div class="view-filters"><input type="text" placeholder="Buscar contactos..." id="contactsSearch" class="form-control"><select id="contactsCompanyFilter" class="form-control"><option value="">Todas las empresas</option></select></div></div>
-                <div class="contacts-grid" id="contactsGrid"><div class="loading"><div class="spinner"></div></div></div>
+                 <div class="view-header"><div class="view-filters"><input type="text" placeholder="Buscar contactos..." id="contactsSearch" class="form-control"><select id="contactsCompanyFilter" class="form-control"><option value="">Todas las empresas</option></select></div></div>
+                 <div class="contacts-grid" id="contactsGrid"><div class="loading"><div class="spinner"></div></div></div>
             </div>
 
             <div class="view" id="companies-view">
-                <div class="view-header"><div class="view-filters"><input type="text" placeholder="Buscar empresas..." id="companiesSearch" class="form-control"><select id="companiesIndustryFilter" class="form-control"><option value="">Todas las industrias</option></select></div></div>
-                <div class="companies-grid" id="companiesGrid"><div class="loading"><div class="spinner"></div></div></div>
+                 <div class="view-header"><div class="view-filters"><input type="text" placeholder="Buscar empresas..." id="companiesSearch" class="form-control"><select id="companiesIndustryFilter" class="form-control"><option value="">Todas las industrias</option></select></div></div>
+                 <div class="companies-grid" id="companiesGrid"><div class="loading"><div class="spinner"></div></div></div>
             </div>
 
             <div class="view" id="deals-view">
                  <div class="view-header"><div class="view-filters"><input type="text" placeholder="Buscar negocios..." id="dealsSearch" class="form-control"><select id="dealsStageFilter" class="form-control"><option value="">Todas las etapas</option></select></div></div>
-                <div class="deals-table-container">
-                    <table class="deals-table" id="dealsTable">
-                        <thead>
-                            <tr><th>Título</th><th>Monto</th><th>Etapa</th><th>Probabilidad</th><th>Fecha Cierre</th><th>Contacto</th><th>Acciones</th></tr>
-                        </thead>
-                        
-                        <tbody id="dealsTableBody">
-                            <tr id="deals-loading-row">
-                                <td colspan="7" class="loading">
-                                    <div class="spinner"></div>
-                                </td>
-                            </tr>
-                        </tbody>
-                        </table>
-                </div>
+                 <div class="deals-table-container">
+                     <table class="deals-table" id="dealsTable">
+                         <thead>
+                             <tr><th>Título</th><th>Monto</th><th>Etapa</th><th>Probabilidad</th><th>Fecha Cierre</th><th>Contacto</th><th>Acciones</th></tr>
+                         </thead>
+                         
+                         <tbody id="dealsTableBody">
+                             <tr id="deals-loading-row">
+                                 <td colspan="7" class="loading">
+                                     <div class="spinner"></div>
+                                 </td>
+                             </tr>
+                         </tbody>
+                         </table>
+                 </div>
             </div>
         </main>
         <div class="modal hidden" id="dealModal">
@@ -1824,7 +1832,7 @@
                         <div class="form-row"><div class="form-group"><label class="form-label">Monto</label><input type="number" name="amount" class="form-control" required></div><div class="form-group"><label class="form-label">Moneda</label><select name="currency" class="form-control"><option value="USD">$us</option><option value="BOB">BOB</option></select></div></div>
                         <div class="form-row"><div class="form-group"><label class="form-label">Etapa</label><select name="stage" class="form-control" required></select></div><div class="form-group"><label class="form-label">Probabilidad (%)</label><input type="number" name="probability" class="form-control" min="0" max="100"></div></div>
                         <div class="form-row"><div class="form-group"><label class="form-label">Contacto</label><select name="contactId" class="form-control"><option value="">Seleccionar contacto</option></select></div><div class="form-group"><label class="form-label">Fecha de Cierre</label><input type="date" name="closeDate" class="form-control"></div></div>
-                        <div class="form-group"><label class="form-label">Notas</label><textarea name="notes" class="form-control" rows="3"></textarea></div>
+                         <div class="form-group"><label class="form-label">Notas</label><textarea name="notes" class="form-control" rows="3"></textarea></div>
                     </form>
                 </div>
                 <div class="modal-footer"><button type="button" class="btn btn-danger hidden" id="dealDeleteBtn">Eliminar</button><button type="button" class="btn btn--outline" id="dealCancelBtn">Cancelar</button><button type="submit" form="dealForm" class="btn btn--primary">Guardar</button></div>
@@ -1840,7 +1848,7 @@
                          <div class="form-row"><div class="form-group"><label class="form-label">Nombre</label><input type="text" name="firstName" class="form-control" required></div><div class="form-group"><label class="form-label">Apellido</label><input type="text" name="lastName" class="form-control" required></div></div>
                         <div class="form-row"><div class="form-group"><label class="form-label">Correo Electrónico</label><input type="email" name="email" class="form-control" required></div><div class="form-group"><label class="form-label">Teléfono</label><input type="tel" name="phone" class="form-control"></div></div>
                         <div class="form-row"><div class="form-group"><label class="form-label">Empresa</label><select name="companyId" class="form-control"><option value="">Seleccionar empresa</option></select></div><div class="form-group"><label class="form-label">Puntuación</label><input type="number" name="score" class="form-control" min="0" max="100" value="50"></div></div>
-                        <div class="form-group"><label class="form-label">Etiquetas (separadas por comas)</label><input type="text" name="tags" class="form-control" placeholder="ej: Tomador de decisiones, Gerente de TI"></div>
+                         <div class="form-group"><label class="form-label">Etiquetas (separadas por comas)</label><input type="text" name="tags" class="form-control" placeholder="ej: Tomador de decisiones, Gerente de TI"></div>
                     </form>
                 </div>
                  <div class="modal-footer"><button type="button" class="btn btn--secondary hidden" id="contactHistoryBtn" style="margin-right: auto;">Ver Historial</button><button type="button" class="btn btn--danger hidden" id="contactDeleteBtn" style="margin-right: 10px;">Eliminar</button><button type="button" class="btn btn--outline" id="contactCancelBtn">Cancelar</button><button type="submit" form="contactForm" class="btn btn--primary">Guardar</button></div>
@@ -1853,10 +1861,10 @@
                 <div class="modal-header"><h2 id="companyModalTitle">Agregar Empresa</h2><button class="modal-close" id="companyModalClose"><i class="fas fa-times"></i></button></div>
                 <div class="modal-body">
                     <form id="companyForm">
-                        <div class="form-group"><label class="form-label">Nombre de la Empresa</label><input type="text" name="name" class="form-control" required></div>
+                         <div class="form-group"><label class="form-label">Nombre de la Empresa</label><input type="text" name="name" class="form-control" required></div>
                         <div class="form-row"><div class="form-group"><label class="form-label">Industria</label><input type="text" name="industry" class="form-control" required></div><div class="form-group"><label class="form-label">Tamaño</label><select name="size" class="form-control" required><option value="">Seleccionar tamaño</option><option value="1-10">1-10</option><option value="10-50">10-50</option><option value="50-200">50-200</option><option value="200-500">200-500</option><option value="500+">500+</option></select></div></div>
                         <div class="form-row"><div class="form-group"><label class="form-label">Sitio Web</label><input type="url" name="website" class="form-control"></div><div class="form-group"><label class="form-label">Ingresos Anuales</label><input type="number" name="revenue" class="form-control"></div></div>
-                        <div class="form-group"><label class="form-label">Ubicación</label><input type="text" name="location" class="form-control"></div>
+                         <div class="form-group"><label class="form-label">Ubicación</label><input type="text" name="location" class="form-control"></div>
                     </form>
                 </div>
                 <div class="modal-footer"><button type="button" class="btn btn--danger hidden" id="companyDeleteBtn" style="margin-right: auto;">Eliminar</button><button type="button" class="btn btn--outline" id="companyCancelBtn">Cancelar</button><button type="submit" form="companyForm" class="btn btn--primary">Guardar</button></div>
@@ -1912,19 +1920,19 @@
          const auth = getAuth(app);
          const db = getFirestore(app); // Instancia de Firestore
 
-        // Crear un objeto con las funciones de Firestore para pasarlas a CRMApp
-        const firestoreFunctions = {
-            collection,
-            query,
-            where,
-            getDocs,
-            addDoc,
-            updateDoc,
-            deleteDoc,
-            doc,
-            setDoc, 
-            getDoc
-        };
+       // Crear un objeto con las funciones de Firestore para pasarlas a CRMApp
+       const firestoreFunctions = {
+           collection,
+           query,
+           where,
+           getDocs,
+           addDoc,
+           updateDoc,
+           deleteDoc,
+           doc,
+           setDoc, 
+           getDoc
+       };
 
          // Referencias a los elementos HTML principales
          const authWrapper = document.getElementById('authWrapper');
@@ -2104,16 +2112,16 @@
          * Maneja toda la lógica de negocio, estado y renderizado de la UI.
          */
         class CRMApp {
-            
+           
             // 1. CONSTRUCTOR: Se ejecuta al crear la instancia (después del login)
             constructor(userData, db, firestore) { 
                 console.log("CRMApp constructor iniciado"); 
                 this.currentView = 'dashboard'; // Vista inicial
-                
+               
                 // Referencias a Firebase (pasadas desde el script módulo)
                 this.db = db;
                 this.firestore = firestore; // Objeto con { collection, query, doc, etc. }
-                
+               
                 // Información del usuario logueado
                 const user = userData || { nombre: 'Invitado', apellido: '', cargo: 'Usuario', email: '', uid: 'guest' };
                 const lastName = user.apellido || '';
@@ -2123,11 +2131,11 @@
                     role: user.cargo || 'Usuario',
                     avatar: `${user.nombre ? user.nombre[0] : ''}${lastName ? lastName[0] : ''}`.toUpperCase() || 'GU'
                 };
-                
+               
                 // --- Estado Local de la App ---
                 this.isDarkMode = false;
                 this.sidebarCollapsed = false;
-                
+               
                 // IDs para edición (se guardan al abrir un modal de edición)
                 this.editingDealId = null;
                 this.editingContactId = null;
@@ -2147,16 +2155,16 @@
                     { id: "closed-won", name: "Ganado", color: "#1d6fb6", defaultProbability: 100, order: 5 },
                     { id: "closed-lost", name: "Perdido", color: "#EF4444", defaultProbability: 0, order: 6 }
                 ];
-                
+               
                 // Configura la UI básica (perfil, tema, listeners)
                 this.initUI(); 
                 console.log("CRMApp constructor finalizado"); 
             }
-            
+           
             // 2. RENDER INICIAL: Carga datos y muestra la primera vista
             async renderInitialView() {
                 console.log("Ejecutando renderInitialView..."); 
-                
+               
                 try {
                     console.log("Cargando datos de Firestore...");
                     // 2a. Carga todos los datos de Firestore (deals, contacts, companies)
@@ -2165,7 +2173,7 @@
 
                     // 2b. Llena los menús desplegables (ej: <select> de contactos)
                     this.populateDropdowns(); 
-                    
+                   
                     // 2c. Carga la vista inicial (Dashboard)
                     this.switchView(this.currentView); 
                 } catch (error) {
@@ -2176,7 +2184,7 @@
 
             // 3. LECTOR DE DATOS: Lee datos de Firestore y los guarda localmente
             async initializeData() {
-                
+               
                 // 3a. Crear queries seguras (filtran por ownerId del usuario actual)
                 const qDeals = this.firestore.query(
                     this.firestore.collection(this.db, "deals"), 
@@ -2190,7 +2198,7 @@
                     this.firestore.collection(this.db, "companies"),
                      this.firestore.where("ownerId", "==", this.currentUser.id)
                 );
-                
+               
                 // 3b. Ejecutar queries en paralelo para más velocidad
                 const [dealsSnapshot, contactsSnapshot, companiesSnapshot] = await Promise.all([
                     this.firestore.getDocs(qDeals),
@@ -2218,7 +2226,7 @@
                 console.log("Ejecutando initUI..."); 
                 this.updateSidebarUser(); // Pone nombre y avatar en el perfil
                 this.bindEvents();        // Activa todos los botones y listeners
-                 
+                
                 // Ajusta tema claro/oscuro según preferencia del navegador
                 if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
                     this.isDarkMode = false; this.toggleTheme();
@@ -2359,13 +2367,13 @@
             populateDropdowns() { 
                 const ss = document.querySelector('#dealForm select[name="stage"]'); 
                 if(ss) ss.innerHTML = this.pipelineStages.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');
-                
+               
                 const cs = document.querySelector('#dealForm select[name="contactId"]'); 
                 if(cs) cs.innerHTML = '<option value="">Sel. contacto</option>' + this.contacts.map(c=>`<option value="${c.id}">${c.firstName} ${c.lastName}</option>`).join('');
-                
+               
                 const cos = document.querySelector('#contactForm select[name="companyId"]'); 
                 if(cos) cos.innerHTML = '<option value="">Sel. empresa</option>' + this.companies.map(co=>`<option value="${co.id}">${co.name}</option>`).join('');
-                
+               
                 this.populateFilterDropdowns(); // Llena los filtros de las vistas
             }
 
@@ -2373,18 +2381,18 @@
             populateFilterDropdowns() { 
                  const of = document.getElementById('ownerFilter'); 
                  if(of) of.innerHTML = '<option value="">Todos</option>'; // (Opcional: llenar con usuarios)
-                
-                const ccf = document.getElementById('contactsCompanyFilter'); 
-                if(ccf) ccf.innerHTML = '<option value="">Todas</option>' + this.companies.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
-                
-                const cif = document.getElementById('companiesIndustryFilter'); 
-                if(cif){ 
-                    const inds=[...new Set(this.companies.map(c=>c.industry))].filter(Boolean); 
-                    cif.innerHTML = '<option value="">Todas</option>' + inds.map(i=>`<option value="${i}">${i}</option>`).join(''); 
-                }
-                
-                const dsf = document.getElementById('dealsStageFilter'); 
-                if(dsf) dsf.innerHTML = '<option value="">Todas</option>' + this.pipelineStages.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');
+               
+                 const ccf = document.getElementById('contactsCompanyFilter'); 
+                 if(ccf) ccf.innerHTML = '<option value="">Todas</option>' + this.companies.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
+               
+                 const cif = document.getElementById('companiesIndustryFilter'); 
+                 if(cif){ 
+                     const inds=[...new Set(this.companies.map(c=>c.industry))].filter(Boolean); 
+                     cif.innerHTML = '<option value="">Todas</option>' + inds.map(i=>`<option value="${i}">${i}</option>`).join(''); 
+                 }
+               
+                 const dsf = document.getElementById('dealsStageFilter'); 
+                 if(dsf) dsf.innerHTML = '<option value="">Todas</option>' + this.pipelineStages.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');
             }
 
 
@@ -2394,11 +2402,11 @@
                 // Actualiza menú activo
                 document.querySelectorAll('.menu-item').forEach(i=>i.classList.remove('active')); 
                 document.querySelector(`[data-view="${viewName}"]`)?.classList.add('active');
-                
+               
                 // Muestra la vista correcta
                 document.querySelectorAll('.view').forEach(v=>v.classList.remove('active')); 
                 document.getElementById(`${viewName}-view`)?.classList.add('active');
-                
+               
                 // Actualiza header y título de la página
                 const titles = { dashboard: 'Tablero', pipeline: 'Embudo', contacts: 'Contactos', companies: 'Empresas', deals: 'Negocios' };
                 const title = titles[viewName] || viewName;
@@ -2478,7 +2486,7 @@
 
                     // Destruir gráfico anterior si existe
                     if (window.pipelineChart?.destroy) window.pipelineChart.destroy(); 
-                    
+                   
                     window.pipelineChart = new Chart(ctx, { 
                         type: 'doughnut', 
                         data: { 
@@ -2545,13 +2553,13 @@
                      `;
                  }).join('');
             }
-            
+           
             // Carga la vista de Pipeline (Kanban)
             loadPipeline() { 
                 const b=document.getElementById('pipelineBoard'); 
                 if (!b) return; 
                 b.innerHTML = ''; // Limpiar spinner
-                
+               
                 // Crear una columna por cada etapa
                 this.pipelineStages.sort((a,b)=>a.order-b.order).forEach(st=>{
                     const d=this.deals.filter(dl=>dl.stage===st.id); // Negocios en esta etapa
@@ -2609,14 +2617,14 @@
                     });
                 }); 
             }
-            
+           
             // Mueve un negocio a una nueva etapa (actualiza Firestore)
             async moveDeal(dealId, newStage) {
                 const d = this.deals.find(dl => dl.id === dealId);
                 if (!d) return;
                 const s = this.pipelineStages.find(st => st.id === newStage);
                 if (!s) return;
-                
+               
                 // Datos a actualizar
                 const updateData = {
                     stage: newStage,
@@ -2631,7 +2639,7 @@
 
                     // 2. Actualizar array local (caché)
                     Object.assign(d, updateData);
-                    
+                   
                     this.loadPipeline(); // Recargar vista del pipeline
                     this.showToast('success', 'Negocio movido', `"${d.title}" movido`);
                 } catch (error) {
@@ -2639,7 +2647,7 @@
                     this.showToast('error', 'Error', 'No se pudo mover el negocio.');
                 }
             }
-            
+           
             // Carga la vista de Contactos
             loadContacts() { 
                 this.renderContacts(this.contacts); // Renderiza todos
@@ -2675,7 +2683,7 @@
                     </div>`;
                 }).join(''); 
             }
-            
+           
             // Carga la vista de Empresas
             loadCompanies() { 
                 this.renderCompanies(this.companies); // Renderiza todas
@@ -2711,7 +2719,7 @@
                     </div>`;
                 }).join(''); 
             }
-            
+           
             // Carga la vista de lista de Negocios
             loadDeals() { 
                 this.renderDeals(this.deals); // Renderiza todos
@@ -2720,13 +2728,13 @@
             renderDeals(deals) { 
                 const tbody=document.getElementById('dealsTableBody');
                 if(!tbody)return;
-                
+               
                 // Si no hay negocios, muestra estado vacío (esto reemplaza el <tr> de carga)
                 if(deals.length===0){
                     tbody.innerHTML=`<tr><td colspan="7" class="empty-state"><i class="fas fa-handshake"></i><h3>No hay negocios</h3><p>Agrega el primero</p></td></tr>`;
                     return;
                 }
-                
+               
                 // Si hay negocios, renderiza las filas (esto reemplaza el <tr> de carga)
                 tbody.innerHTML=deals.map(d=>{
                     const c=this.contacts.find(ct=>ct.id===d.contactId);
@@ -2751,17 +2759,17 @@
                     </tr>`;
                 }).join(''); 
             }
-            
-            
+           
+           
             // --- 7. FILTROS Y BÚSQUEDA (Usan arrays locales) ---
-            
+           
             filterPipeline() { 
                 const s=document.getElementById('pipelineSearch')?.value.toLowerCase()||'';
                 const o=document.getElementById('ownerFilter')?.value||'';
                 let f=this.deals;
                 if(s)f=f.filter(d=>d.title.toLowerCase().includes(s));
                 if(o)f=f.filter(d=>d.ownerId==o);
-                
+               
                 // Re-renderizar pipeline con datos filtrados
                 const b=document.getElementById('pipelineBoard');
                 if(!b)return;
@@ -2810,9 +2818,9 @@
                 if(r.length>0)this.showToast('info','Búsqueda',`${r.length} resultados`);
                 else this.showToast('info','Búsqueda',`No hay resultados`); 
             }
-            
+           
             // --- 8. FUNCIONES CRUD (Crear, Leer, Actualizar, Borrar) ---
-            
+           
             // Abre el modal correcto según la vista actual
             handleAddNew() { 
                 switch(this.currentView){
@@ -2830,7 +2838,7 @@
                 let companyId = null; 
                 if(contactId){ const c = this.contacts.find(ct=>ct.id===contactId); if(c) companyId = c.companyId; }
                 const now = new Date().toISOString();
-                
+               
                 // Datos del formulario
                 const dealData = { 
                     title: fd.get('title'), 
@@ -2850,11 +2858,11 @@
                         // ACTUALIZAR (Update)
                         const dealRef = this.firestore.doc(this.db, "deals", this.editingDealId);
                         await this.firestore.updateDoc(dealRef, dealData);
-                        
+                       
                         // Actualizar caché local
                         const deal = this.deals.find(d => d.id === this.editingDealId);
                         if(deal) Object.assign(deal, dealData);
-                        
+                       
                         this.showToast('success','Negocio actualizado');
                     } else {
                         // CREAR (Create)
@@ -2864,13 +2872,13 @@
                             createdAt: now
                         };
                         const docRef = await this.firestore.addDoc(this.firestore.collection(this.db, "deals"), dealToCreate);
-                        
+                       
                         // Añadir a caché local con el nuevo ID de Firestore
                         this.deals.push({ id: docRef.id, ...dealToCreate });
-                        
+                       
                         this.showToast('success','Negocio creado');
                     }
-                    
+                   
                     this.closeModal('dealModal');
                     this.switchView(this.currentView); // Recargar la vista actual
                     this.editingDealId = null; // Limpiar ID de edición
@@ -2880,7 +2888,7 @@
                     this.showToast('error', 'Error', 'No se pudo guardar el negocio.');
                 }
             }
-            
+           
             // CREAR o ACTUALIZAR un Contacto en Firestore
             async handleContactSubmit(form) {
                 const fd = new FormData(form);
@@ -2901,10 +2909,10 @@
                         // ACTUALIZAR
                         const contactRef = this.firestore.doc(this.db, "contacts", this.editingContactId);
                         await this.firestore.updateDoc(contactRef, contactData);
-                        
+                       
                         const contact = this.contacts.find(c => c.id === this.editingContactId);
                         if(contact) Object.assign(contact, contactData);
-                        
+                       
                         this.showToast('success','Contacto actualizado');
                     } else {
                         // CREAR
@@ -2914,12 +2922,12 @@
                             createdAt: now
                         };
                         const docRef = await this.firestore.addDoc(this.firestore.collection(this.db, "contacts"), contactToCreate);
-                        
+                       
                         this.contacts.push({ id: docRef.id, ...contactToCreate });
-                        
+                       
                         this.showToast('success','Contacto creado');
                     }
-                    
+                   
                     this.closeModal('contactModal');
                     this.switchView(this.currentView);
                     this.populateDropdowns(); // Actualizar selects que dependen de contactos
@@ -2944,16 +2952,16 @@
                     location: fd.get('location') || null, 
                     lastModified: now 
                 };
-                
+               
                 try {
                     if (this.editingCompanyId) {
                         // ACTUALIZAR
                         const coRef = this.firestore.doc(this.db, "companies", this.editingCompanyId);
                         await this.firestore.updateDoc(coRef, companyData);
-                        
+                       
                         const co = this.companies.find(c => c.id === this.editingCompanyId);
                         if(co) Object.assign(co, companyData);
-                        
+                       
                         this.showToast('success','Empresa actualizada');
                     } else {
                         // CREAR
@@ -2963,12 +2971,12 @@
                             createdAt: now
                         };
                         const docRef = await this.firestore.addDoc(this.firestore.collection(this.db, "companies"), companyToCreate);
-                        
+                       
                         this.companies.push({ id: docRef.id, ...companyToCreate });
-                        
+                       
                         this.showToast('success','Empresa creada');
                     }
-                    
+                   
                     this.closeModal('companyModal');
                     this.switchView(this.currentView);
                     this.populateDropdowns(); // Actualizar selects que dependen de empresas
@@ -2980,7 +2988,7 @@
                     this.showToast('error', 'Error', 'No se pudo guardar la empresa.');
                 }
             }
-            
+           
             // Abre modal para EDITAR Negocio
             editDeal(id){
                 const d=this.deals.find(dl=>dl.id===id);
@@ -2999,7 +3007,7 @@
                 f.notes.value=d.notes||'';
                 this.editingDealId=id; // Guarda el ID para el submit
             }
-            
+           
             // Abre modal para EDITAR Contacto
             editContact(id){
                 const c=this.contacts.find(ct=>ct.id===id);
@@ -3018,7 +3026,7 @@
                 f.tags.value=c.tags?.join(', ')||'';
                 this.editingContactId=id; // Guarda el ID
             }
-            
+           
             // Abre modal para EDITAR Empresa
             editCompany(id){
                 const c=this.companies.find(co=>co.id===id);
@@ -3035,17 +3043,17 @@
                 f.location.value=c.location||'';
                 this.editingCompanyId=id; // Guarda el ID
             }
-            
+           
             // ELIMINAR un Negocio de Firestore
             async deleteDeal(id) { 
                 if(!confirm('¿Estás seguro de eliminar este negocio?')) return; 
                 try {
                     // 1. Eliminar de Firestore
                     await this.firestore.deleteDoc(this.firestore.doc(this.db, "deals", id));
-                    
+                   
                     // 2. Eliminar de caché local
                     this.deals = this.deals.filter(dl => dl.id !== id);
-                    
+                   
                     this.showToast('success', 'Negocio eliminado');
                     this.closeModal('dealModal');
                     this.switchView(this.currentView); // Recargar vista
@@ -3054,7 +3062,7 @@
                     this.showToast('error', 'Error', 'No se pudo eliminar el negocio.');
                 }
             }
-            
+           
             // ELIMINAR un Contacto de Firestore
             async deleteContact(id) { 
                 if(!confirm('¿Estás seguro de eliminar este contacto? (Esto lo desvinculará de negocios existentes)')) return; 
@@ -3066,7 +3074,7 @@
                     this.contacts = this.contacts.filter(ct => ct.id !== id);
                     // 3. Desvincular de negocios locales (opcional, se actualizará al guardar negocio)
                     this.deals.forEach(d => { if(d.contactId === id) d.contactId = null; }); 
-                    
+                   
                     this.showToast('success', 'Contacto Eliminado');
                     this.closeModal('contactModal');
                     this.switchView(this.currentView);
@@ -3076,7 +3084,7 @@
                     this.showToast('error', 'Error', 'No se pudo eliminar el contacto.');
                 }
             }
-            
+           
             // ELIMINAR una Empresa de Firestore
             async deleteCompany(id) { 
                 if(!confirm('¿Estás seguro de eliminar esta empresa? (Esto la desvinculará de contactos existentes)')) return; 
@@ -3088,7 +3096,7 @@
                     this.companies = this.companies.filter(co => co.id !== id);
                     // 3. Desvincular de contactos locales
                     this.contacts.forEach(ct => { if(ct.companyId === id) ct.companyId = null; }); 
-                    
+                   
                     this.showToast('success', 'Empresa Eliminada');
                     this.closeModal('companyModal');
                     this.switchView(this.currentView);
@@ -3098,7 +3106,7 @@
                     this.showToast('error', 'Error', 'No se pudo eliminar la empresa.');
                 }
             }
-            
+           
             // Muestra el historial de un contacto (solo lee de datos locales)
             showContactHistory(id) { 
                 const c=this.contacts.find(ct=>ct.id===id);
@@ -3119,10 +3127,10 @@
                 document.getElementById('historyModalBody').innerHTML=`<p><strong>Email:</strong> ${c.email}</p><p><strong>Teléfono:</strong> ${c.phone||'N/A'}</p><hr>${dh}`;
                 this.openModal('historyModal'); 
             }
-            
-            
+           
+           
             // --- 9. FUNCIONES AUXILIARES (Helpers) ---
-            
+           
             // Abre un modal por su ID
             openModal(id){
                 const m=document.getElementById(id);
@@ -3131,7 +3139,7 @@
                     if(m.querySelector('form')) this.resetForm(m.querySelector('form').id);
                     // Oculta botones de eliminar/historial
                     m.querySelectorAll('.btn--danger,.btn--secondary').forEach(b=>b.classList.add('hidden'));
-                    
+                   
                     // Resetea títulos y IDs de edición
                     if(id==='dealModal'){
                         document.getElementById('dealModalTitle').textContent='Agregar Negocio';
@@ -3143,12 +3151,12 @@
                         document.getElementById('companyModalTitle').textContent='Agregar Empresa';
                         this.editingCompanyId=null;
                     }
-                    
+                   
                     m.classList.remove('hidden'); // Muestra el modal
                     document.body.style.overflow='hidden'; // Evita scroll de fondo
                 }
             }
-            
+           
             // Cierra un modal por su ID
             closeModal(id){
                 const m=document.getElementById(id);
@@ -3157,13 +3165,13 @@
                     document.body.style.overflow='auto'; // Restaura scroll
                 }
             }
-            
+           
             // Resetea un formulario por su ID
             resetForm(id){
                 const f=document.getElementById(id);
                 if(f) f.reset();
             }
-            
+           
             // Contrae/Expande la sidebar
             toggleSidebar(){
                 const s=document.getElementById('sidebar');
@@ -3172,7 +3180,7 @@
                     this.sidebarCollapsed=!this.sidebarCollapsed;
                 }
             }
-            
+           
             // Cambia entre modo claro y oscuro
             toggleTheme(){
                 this.isDarkMode=!this.isDarkMode;
@@ -3186,7 +3194,7 @@
                     if(t) t.innerHTML='<i class="fas fa-moon"></i>';
                 }
             }
-            
+           
             // Muestra una notificación (toast)
             showToast(type,title,message){
                 const t=document.createElement('div');
